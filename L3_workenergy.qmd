@@ -1,0 +1,197 @@
+{{< include macros.qmd >}}
+<!--
+This section needs editing:
+Little edits here and there to clarify. 
+Diagrams? 
+Finish writing out most sections tbh. 
+-->
+
+# Work and Energy in Electrostatics
+
+*Recommended reading*: Griffiths Section 2.4
+
+## Work done to move a charge
+
+In general, the work done to move an electric charge is calculated in the same way we calculate mechanical work when solving mechanics problems, taking the form: 
+
+$$
+
+W = \int \F \cdot \mathrm{d} \l 
+
+$$ 
+
+Let's say we have some configuration of source charges, and we want to move a test charge past these charges, as represented in this diagram: 
+
+![](Figures/workdone_charge.png){width=300}
+
+Let us work out how much work we need to do to move the charge along this path. The work done to move a charge from point **a** to point **b** is given by: 
+
+$$
+
+W = \int_{\b}^{\a} \F \cdot \mathrm{d} \l 
+
+$$
+
+Each of the charges is exerting a force $\F = Q \E$ on the test charge, therefore the total work becomes:
+
+$$
+
+W = - Q \int_{\b}^{\a} \E \cdot \mathrm{d} \l = Q[V(\b) - V(\a)]
+
+$${#eq-workatob}
+
+
+If you want to bring a charge $Q$ in from very far away and place it at point $\r$, you the work you have to do is
+
+$$W = Q[V(\r) - V(\infty)]$$
+
+which, if you use a reference point at infinity, simply becomes
+
+$$W = Q V(\r)$$
+
+which should be a familiar expression from your previous studies. 
+
+
+## Energy of a point charge distribution 
+
+If you want to assemble a group of point charges, the work required to do so is given by
+
+$$ W = \frac{1}{2} \sum_{i=1}^n q_i V(\r_i) $$ {#eq-workMulti}
+
+Let's break this down. To calculate the work done to assemble a group of point charges, we need to first realise the fact that the first charge to join the group does not take any work, because there is no electric field present for it to interact with. It is only when we try to introduce further charges to configuration that work needs to be done. We therefore choose one of our charges arbitrarily to be the first charge. For every subsequent charge that is brought in, the work done to bring it in is proportional to $q_i V(\r_i)$, where $q_i$ is the charge in question and $V(\r_i)$ is the potential at position $\r_i$ (position of $q_i$) due to all the other charges that are present. Summing over all of these will result in the work needed to add every charge to the distribution, and therefore gives the potential energy of the whole charge configuration. Summing the potentials of each charge with respect to the rest of the group of charges will lead to each pair of charges being considered twice, which is not physical, therefore the factor of $\frac{1}{2}$ is introduced to remove this problem. For a full derivation and explanation of @eq-workMulti, see Griffiths Section 2.4.2. 
+
+## Energy of a continuous charge distribution 
+
+Now consider the situation where we have a continuous charge distribution instead of a collection of point charges. It is important to note here that a charge distribution is never truly continuous - charge always comes in the form of discrete point charges such as electrons, protons etc - however if we have a very large amount of point charges we can consider them to be a continuous distribution with some associated charge density. For a volume charge density, @eq-workMulti becomes
+
+$$ W = \frac{1}{2}\int \rho V \mathrm{d} \tau$$ {#eq-cont1}
+
+where $V$ denotes volume and $\mathrm{d} \tau$ is the infinitesimal volume element. 
+
+The same formulation works for a surface charge density...
+
+$$ W = \frac{1}{2}\int \sigma V \mathrm{d} a$$
+
+... and a line charge density
+
+$$ W = \frac{1}{2}\int \lambda V \mathrm{d} l$$
+
+as well. 
+
+The energy of a continuous charge distribution can also be expressed in the following way:
+
+$$ W = \frac{\epilon_0}{2} \left( int_{\mathcal{V}} E^2 \mathrm{d} \tau + \oint_{\mathcal{S}} V \E \cdot \mathrm{d} \a $$.{#eq-cont2}
+
+We will not look at the derivation for this now, because it involves concepts not yet encountered in this course. After Lecture 7, I would recommend that you look at Section 2.4.3 of the Griffiths for the derivation of @eq-cont2.
+
+If we integrate @eq-cont2 over all space, the surface integral goes to zero and we end up with:  
+
+$$ W = \frac{\epilon_0}{2} \int_{\mathrm{all \; space}} E^2 \mathrm{d} \tau $$.{#eq-cont3}  
+
+
+<!--
+-->
+
+## Work and the electric dipole
+
+### Electric dipole field
+
+
+First of all, let's talk about what an electric dipole is. 
+An electric dipole is a combination of a positive and negative charge, equal in magnitude, a small distance from each other. A visual representation of the electric field of a dipole is shown below:
+
+![](Figures/dipole_field.png){width=300}
+
+The vector field for an electric dipole can be calculated by summing the vector fields due to the two charges. 
+
+Let's consider the dipole in the diagram below. The dipole is oriented along the $y$-axis, and we define an arbitrary point $P$ on the $x$-axis: 
+
+![A dipole represented in the $x$-$y$ plane, where $d$ is the distance between the charges.](Figures/dipole_diagram.png){width=300}
+
+For dipoles, we define a quantity known as the electric dipole moment, given by $\mathrm{\mathbf{p}} = q \d $. The electric dipole moment is the product of the charge $q$ (pay attention here! This is the charge on \bf{one of} the charges, not both added together) and $d$, which is the displacement vector pointing from the negative charge to the positive charge. Note that this is the opposite way to how electric fields are defined, which point from positive to negative charges.  
+
+![A diagram of an electric dipole, showing the vector quantities $\d$ and $\p$, which are the vector length of the dipole and the dipole moment, respectively.](Figures/dipole_moment.png){width=300}
+
+The field produced by the dipole at point $P$ on the $x$-axis is given by: 
+$$
+\E = \frac{1}{4\pi \epsilon_0} \frac{qd}{ \left( x^2 \left( \frac{d}{2} \right)^2 \right)^{\frac{3}{2}} }
+$$
+
+
+Does this look familiar? If you attempted Q1 of the Problem Set for Lecture 1, you have actually already calculated the electric field of an electric dipole! The only difference is that in that question you calculated the field at a point on the $z$-axis, but otherwise it should be same mathematical expression. In that problem you were asked to think about the dipole field in different ranges of values of $z$. If we look at the above expression, we can see that in the limit $x >> d$ (in other words, when we are at a distance $x$ from the dipole that is much larger than the size of the dipole $d$) the electric field due to the dipole can be reduced to:
+$$
+\E = \frac{1}{4 \pi \epsilon_0} \frac{\p}{x^3}
+$$ 
+
+
+So the field is very similar to that of a point charge, however it drops off even faster with distance. If we look at the field lines of the dipole, we can see how this happens - instead of spreading straight out from the charges, the field lines bend towards the axis of the dipole, therefore diverging faster than the point charge case.
+
+### Energy of a dipole in an external electric field
+
+Now, back to the topic at hand: work and energy. 
+
+Consider a dipole that is placed within a uniform electric field. The force on each charge has magnitude $qE$, but since these forces are in opposite directions there is no net force on the dipole. There is however a torque about the centre of the dipole. See @fig-dipoleExt to get a feel for this. 
+
+
+
+![Representation of a dipole placed in an external uniform electric field. $\theta$ is the angle the dipole takes to the direction of the external electric field and $F$ is the force on each charge of the dipole due to the external field](Figures/dipole_extE.jpg){width=400}{#fig-dipoleExt}
+
+The torque about the centre of the dipole in @fig-dipoleExt is
+
+$$ \tau = 2 F \frac{d}{2} \sin\theta = qEd\sin\theta = p E \sin\theta $$
+
+This can be expressed in vector form as
+$$ \mathrm{\mathbf{\tau}} = \p \times \E $$
+
+The torque will cause the dipole to rotate and align itself with the electric field, as shown here:
+
+![](Figures/dipole_align.png){width=300}{#fig-dipoleAlign}
+
+If we think about it in terms of work - we Would have to do work on the dipole to rotate it away from the position where it is aligned with the electric field (which is when the positive charge is on the right). This work is stored as potential energy. The dipole does work (in other words it loses potential energy) rotating towards its  aligned position. 
+
+The work done is the integral of the product of the torque and the angle turned through:
+
+$$
+\begin{split} 
+W & = \int_{\theta_0}^{\theta} \tau \mathrm{d} \theta \\
+& = \int_{\theta_0}^{\theta} pE\sin\theta \mathrm{d} \theta \\
+& = [-pE \cos \theta]_{\theta_0}^{\theta} 
+\end{split}
+$$
+
+The change in potential energy is $\Delta U = W$, hence:
+
+$$ \Delta U = U(\theta_0) - U (\theta) = pE(\cos\theta_0 - \cos\theta) $$
+
+The zero of potential energy $U(\theta_0)$ can be chosen to be anywhere, so we can choose it to correspond to $\theta = 90^{\circ}$ in which case $U = -pE\cos\theta$. 
+
+Not surprisingly, the energy is at a minimum when the dipole is aligned with the field, at which point the torque will be zero.
+
+
+## Practice problems
+
+<!--
+Use this problem set to guide the content of the lecture notes/lecture!
+-->
+
+1) As discussed in the lecture, consider a collection of 3 charges that form 3 sides of a square, as shown: 
+
+![](Figures/L3_3charges.png){width=200}
+
+
+In the lecture, we calculated the amount of work it takes to bring in a 4th charge $+q$ from far away and place it in the 4th corner of the square. 
+
+Calculate the total work it takes to assemble all 4 charges into the square configuration.  
+
+<!--
+Q1 is Prob 2.31(b) from 3Ed Griffiths, it's 2.32 in the 5Ed Griffiths.
+Q2 is Problem 2.35 from 5Ed. 
+-->
+
+2) (*Griffiths Problem 2.35*)
+Find the energy stored in the uniformly charged solid sphere of radius $R$ and charge $q$. Do it 3 different ways:
+(a) Use the equation $ W = \frac{1}{2} \int \rho V \mathrm{d} \tau $. You found the potential in Q1 of the Lecture 1 Problem Set. 
+
+(b) Use the equation $ W = \frac{\epilon_0}{2} \int_{\mathrm{all space}} E^2 \mathrm{d} \tau $. The electric field is given in Q1 of the Lecture 1 Problem Set. 
+
+(c) Use the equation $ W = \frac{\epilon_0}{2} \left( int_{\mathcal{V}} E^2 \mathrm{d} \tau + \oint_{\mathcal{S}} V \E \cdot \mathrm{d} \a $. Take a spherical volume of radius $a$. What happens as $a \rightarrow \infty$? 

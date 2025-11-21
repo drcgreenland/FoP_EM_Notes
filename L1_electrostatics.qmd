@@ -1,0 +1,255 @@
+{{< include macros.qmd >}}
+
+
+# Electrostatics - Charges, Forces & Fields
+
+*Recommended reading*: Griffiths Section 2.1 (and 2.2 if you want some bonus reading about stuff that will be important later)
+
+## Pre-lecture problem 
+
+Griffiths Problem 1.7
+
+## Electric Charges{#sec-charge}
+
+Electric charge is a fundamental property of matter. Many fundamental particles (such as electrons and protons) have charge. However, macroscopic objects can also be charged due to having a distribution of charged particles on them that has a small imbalance in charge - we might describe these as "charged objects". 
+
+Charge gives rise to electric fields, and hence to the electric forces experienced between charged particles or objects.
+
+Charge can be either a positive or negative quantity. "Like" charges (charges with the same sign) repel each other, and opposite charges attract.
+
+
+Charge is quantized and comes in integer multiples of the elementary charge $e$ which has an approximate value of $1.602 \times 10 ^{-19}$ Coulombs. Electrons carry a charge of $-e$, and protons carry a charge of $+e$. Charges measured in laboratories are always multiples of $e$ but the quarks inside protons and neutrons and other hadrons have charges that are fractions of this elementary charge. 
+
+Charge is conserved - or more specifically, the total charge in an isolated system is conserved. (At least, this has been the case in all the particle interactions physicists have so far observed.) Hence, charge can be neither created nor destroyed, but can only be transferred from one object to another.
+
+
+**Gravitational charge:** there is one type of gravitational charge, which is mass/energy. Gravitational charges attract. We don't know about quantization of mass. (You can probably spend many hours on the internet reading different opinions on this). Mass/Energy is conserved and all everyday objects are gravitationally charged so they all attract each other, but gravity is very weak--we can easily pick up bits of paper with an electrically charged rod when rather few electrons have been
+moved.
+
+<!--
+**Strong field charge:** there are three types of fundamental strong charge (red, green and blue) + three anticharges. Charges attract.
+Colour is quantised and colour is conserved in interactions. All
+everyday objects are colour neutral. Colour fields are confined within
+subatomic particles i.e. to length scales of $\sim 10^{-15}$ m.
+--> 
+
+## Some definitions and important notation
+
+Here I will briefly explain some notation and definitions I will use in this course for setting up and solving problems involving electric charges. 
+
+Consider the following ensemble of charges: 
+
+![Some charges.](Figures/sourcetest_definitions.png)
+
+We define the charges $q_1$, $q_2$, $q_3$... $q_i$ as source charges, meaning that these are the charges that produce the electric field for the purpose of the problem. We define $Q$ as the test charge, which means it is the charge that is experiencing the effects of the electric field produced by the source charge(s). It is important to note that any charge can be a source or a test charge, there is no fundamental difference between them. "Source" and "test" are simply names that we give charges when setting up a problem, so that we can more easily define and solve the problem.
+
+Throughout this course you will also see the terms "source point" and "field point". The source point is the location of the source charge(s), while the field point is essentially the location of the test charge - so when we are solving problems, this is the point at which we are measuring the field, potential, etc. The source point is given by the vector $\r'$ and the field point is given by the vector $\r$, while the separation between the two point is given by the vector $r_s$. (Please note that the Griffiths uses slightly different notation - for the separation vector it uses a curly script "r", I did not use this as there is no way of making that symbol in Latex.) If there is no test charge in the problem (for example if we are computing the electric field of a source charge), the field point is the point at which we are measuring the field - it is the point where a test charge would be if there was one. 
+
+![Some charges, overlaid with axes showing the definition of $\r$, the vector separation between the source and test charges. ](Figures/axes_r_definitions.png){#fig-definitions}
+
+## Electric Forces & Coulomb's Law
+
+All charges produce electric fields, and other charges that are in the prescence of this field experience a force as a result. 
+
+The force on a test charge $Q$, exerted by a source charge $q$, is given by Coulomb's Law, which is as follows: 
+$$ \F = \frac{1}{4\pi \epsilon_0} \frac{q Q}{r_s^2} \hat{\r_s} $$
+ 
+where:
+
+* $\hat{\r}$ is the unit vector in the direction of the force, which points from $q$ to $Q$. 
+* $r$ is the separation between $q$ and $Q$.
+* $\epsilon_0$ is a physical constant known as the \bf{permittivity of free space}.  $\epsilon_0 \approx 8.85 \times 10^{-12}$ Fm $^{-1}$ (farads per metre). 
+
+If $q$ and $Q$ have the same sign (like charges) the force is repulsive ($\F$ is a positive quantity); if $q$ and $Q$ have different signs, the force is attractive ($\F$ is a negative quantity).    
+
+## Superposition Principle
+The principle of superposition states that "the interaction between any two charges is completely unaffected by the presence of others". This means that the total force on a test charge can be computed by calculating the force on the test charge due to each source charge separately, then adding up the contributions, as follows: 
+
+$$ \F_{tot} = \sum_i \F_i $$
+
+
+## Electric Field
+
+The electric field $\E$ produced by a charge (or a collection of charges or charge distribution) is a vector field that represents the force per unit charge experienced by a positive test charge placed at a particular point in space:
+
+$$ \E = \frac{\F}{Q} $$
+
+\noindent which can be rearranged to the more familiar form $\F = Q \E$. 
+
+Hence the electric field a distance $r_s$ from a single point charge is given by:
+
+$$ \E = \frac{1}{4\pi \epsilon_0} \frac{q}{r_s^2} \hat{\r_s} $$
+
+$\mathbf{E}$ has units of Vm$^{-1}$ or NC$^{-1}$. 
+
+
+The superposition principle also applies to the electric field, which can be calculated for any given point in space as a sum of the electric field at that point from all the source charges. Consider the collection of charges in @fig-definitions - the electric field due to this collection of $i$ charges can be expressed as   
+$$ \E_{tot} = \sum_i \E_i = \frac{1}{4\pi\epsilon_0} \sum_{i=1}^n \frac{q_i}{\r_s_i^2} \hat{\r_s} $${#eq-Esum}
+
+What actually is an electric field though? As we have discussed, it is a vector field surrounding an electric charge, so it has a vector value at every point in space which represents how strong of a force another charge would experience at that point. Conceptually, this is not a trivial question - for the purposes of this course, we can simply think of electric field as a real physical entity that fills the space surrounding an electric charge, which causes other charges to "feel" the prescence of the charge and hence interact with it.  
+
+
+
+### Representing the electric field 
+
+The electric field is normally represented by field lines that indicate the direction of the field. The direction of the field is determined by what a positive test charge will do. That's why field lines point towards negative charges - that's the direction a positive charge would travel if it encountered the field of a negative charge.
+The density of lines/arrows indicates the strength of the field at a point. You may also see fields drawn where the size of the arrows represents the electric field strength. The diagram below shows the electric field lines for two positive point charges of the same magnitude.
+
+![Representation of the electric field surrounding two positive charges.](Figures/Efield_like.png)
+
+Most important rules for field lines: 
+
+* Lines begin on positive charges and end on negative charges.
+
+* Lines never intersect.
+
+* Lines are symmetric as they leave the charges. 
+
+
+
+## Continuous charge distributions
+
+Many of the problems we encounter in electromagnetism are not related to small collections of individual point charges like those in @fig-definitions, as this is not a very common or useful physical situation. We often have to deal instead with large collections of charges, such as a charged objects (as discussed in @sec-charge) or currents. We can think of such large collections of charges as **continuous charge distributions** - although they are not truly continuous, as they always consist of individual point charges, we can effectively model them as continuous when there is such a vast amount of charge.
+
+In order to find the field due to a continuous distribution, we must consider the charge divided up into infinitesimal elements $\dd q$ which may be considered as point charges. The infinitesimal contribution to the total field produced by such an element is 
+
+$$ \dd \E = \frac{\dd q}{4\pi\epsilon_0 r_s^2} \hat{\r_s}.$$ 
+where $\r_s$ is the separation vector from the charge element to the field point. To determine the total field due to the distributed charge, the vector sum over the whole distribution of all such contributions must be evaluated by means of an integral: 
+
+$$ E(\r) = \frac{1}{4\pi \epsilon_0} \int \frac{1}{r_s^2} \dd q $${#eq-infinitesimalE}
+
+ In practice, to evaluate the integral it is necessary to express $\dd q$ in terms of $\r, as we will illustrate in examples. We often need to consider charge distributed along a line, over a surface or throughout a volume. This leads to the concept of a variety of charge distributions.
+ 
+ 1) Volume charge distribution has a charge per unit volume (charge density) $\rho$. $\dd q = \rho \dd\tau'$ where $\dd\tau'$ is an element of volume. For a volume charge we can therefore reformulate @eq-infinitesimalE as:
+ $$ \E{\r} \frac{1}{4\pi\epsilon_0} \int_{\mathcal{V}} \frac{\rho (\r')}{\r_s^2} \hat{r_s} \dd \tau' $$
+ 2) Surface charge distribution has a charge per unit area (surface charge density) $\sigma$. $\dd q = \sigma \dd a'$ where $\dd a'$ is an element of area. For a surface charge, the electric field is given by 
+  $$ \E{\r} \frac{1}{4\pi\epsilon_0} \int_{\mathcal{S}} \frac{\sigma (\r')}{\r_s^2} \hat{r_s} \dd a' $$
+
+ 3) Line charge distribution has a charge per unit length (linear charge density) $\\lambda$. $\dd q = \rho \dd l'$ where $\dd l'$ is an element of length. For a line charge. the electric field is given by 
+  $$ \E{\r} \frac{1}{4\pi\epsilon_0} \int_{\mathcal{V}} \frac{\lambda (\r')}{\r_s^2} \hat{r_s} \dd l' $$ 
+ 
+Note carefully the notation here - the same conventions are used as in @fig-definitions, except that now the source charge is $\dd q$. Therefore, $\r_s$ is the vector from $\dd q$ (and therefore from $\dd \tau'$, $\dd a'$ or $\dd l$) to the field point $\r$, while $\r'$ is the vector from the origin to $\dd q$.  
+
+
+
+## Summary
+Electric charges create electric fields, which exert forces on other charges. Coulomb's Law describes the force between point charges. 
+
+## Bonus content: vector fields
+
+### What is a field?
+
+*Recommended reading:* 
+
+A field is a region of space, where property of that space is characterized by either a number (a scalar field) or by three numbers (a vector field).
+
+The concept of a field circumvents the problem of action at a distance, where one inanimate object is "aware" that another has arrived. We understand that the first body sets up a field and the second body interacts with the first via this field.
+
+
+### Scalar and vector fields
+
+A scalar field is characterized at each point by a single number. e.g. the temperature, $T$, at each position in a block of metal heated at some places and cooled at others.
+
+
+![A representation of a temperature field. Isotherms at different temperatures are black lines; blue arrows show the direction of heat flow, which is always perpendicular to the isotherms.](Figures/isotherms.png){width="80mm"}
+
+
+
+$T$ is a function of position i.e. $T = T(x,y,z)$. At every point we can measure the scalar value of the temperature $T$. The black lines represent isotherms i.e. lines where the temperature is constant ($T_1 < T_2 < T_3 < T_4 < T_5$). Heat flow (blue arrows) is perpendicular to the contours of constant temperature - the isotherms ($T_1$, $T_2$ etc). The magnitude of the heat flow is proportional to
+the temperature gradient, so that the heat flow is larger when isotherms are closer together.
+
+The scalar temperature field has an associated vector field, because at any point, the heat flow is a vector, the **magnitude** and **direction** of which depend on position. Heat flow is therefore a
+vector field which is related to the scalar field of temperature. The vector gradient of the field of heat flow depends on the temperature at each point.
+
+### Link between scalar and vector field
+
+*Recommended reading:* 
+
+For the scalar temperature field $T(x,y,z)$ the vector describing the direction and the magnitude of the maximum temperature gradient is:
+
+\begin{equation}
+ \text{Grad} \; T = \nabla T = \frac{\partial T} {\partial x} \hat{\mathbf{i}} + \frac{\partial T}{\partial y} \hat{\mathbf{j}} + \frac{\partial T}{\partial y} \hat{\mathbf{k}}
+\end{equation}
+
+The heat flow is a vector given by $\mathbf{Q} = -k \nabla T$; the minus sign is
+because heat flows from high temperature to low temperature.
+
+In general, for a scalar potential
+$-\nabla \phi = \frac{\partial \phi} {\partial x} \hat{\mathbf{i}} + \frac{\partial \phi}{\partial y} \hat{\mathbf{j}} + \frac{\partial \phi}{\partial y} \hat{\mathbf{k}}$
+describes the magnitude and direction of the physical effects of the
+potential, with an appropriate constant if needed. In the case of the
+electric field if the electric potential is $V$ then the vector field
+$\mathbf{E} = -\nabla V$.
+
+As an example, the gravitational field can be obtained from the
+gravitational potential. The scalar gravitational potential energy is
+given by $U = mgz$ near the Earth's surface, where $z$ is the height.
+The gravitational potential is $U/m = gz$. The gravitational field is
+$-\nabla(gz)=-g \hat{\mathbf{k}}$.
+
+
+### Other operations on vectors
+
+The vector operator $\nabla$ behaves as a vector. We have looked at grad
+$\nabla\phi$ where $\phi$ is a scalar field. In Maxwell's equations,
+which you cover next year, you will also meet $\nabla$ operating on the
+electric field $\mathbf{E}$:
+
+$\nabla \cdot \mathbf{E}$ (div or divergence)
+
+$\nabla \times \mathbf{E}$ (curl or rotation)
+
+Maxwell's equations are one of the great achievements of 19th century
+Physics. They link the phenomena of electricity and magnetism and can be
+used to derive an expression for the speed of light. Einstein said that
+the theory of Relativity was rooted in Maxwell's equations. The
+equations in their differential form are shown below and we will meet
+these in more detail later in the course, along with the integral versions of these
+laws.
+
+\begin{equation}
+
+\nabla \cdot \mathbf{E} = \frac{\rho}{\epsilon_0}
+\end{equation}
+
+\begin{equation}
+\nabla \times \mathbf{E} = - \frac{\partial \mathbf{B}}{\partial t} 
+\end{equation}
+
+\begin{equation}
+\nabla \cdot \mathbf{B} = 0
+\end{equation}
+
+\begin{equation}
+\nabla \times \mathbf{B} = \frac{\mathbf{j}}{c^2 \epsilon_0} + \frac{1}{c^2} \frac{\partial \mathbf{E}}{\partial t}
+\end{equation}
+
+Source: <http://www.clerkmaxwellfoundation.org/html/about_maxwell.html>;<https://maxwells-equations.com/>
+
+
+## Practice problems
+
+1) (*Griffiths Problem 2.2*)
+
+In the lecture, we found the electric field (magnitude and direction) a distance $z$ above the midpoint between two equal charges, $q$, a distance $d$ apart.
+We found that for distances $z >> a$, as we might expect the field appears like that of a single charge $2q$. 
+
+Repeat the calculation of the electric field, but replace the charge on the right with a negative charge (so we now have a dipole). 
+Is there anything interesting about this result? [Hint: try computing the field for different ranges of $z$-values.]
+
+2) Charges $+Q$, $+Q$ and $-Q$ are arranged at the vertices of an equilateral triangle.  What is the electric field at the centre of the triangle?
+
+3) A charge $Q$ is uniformly distributed along the circumference of a thin ring of radius $R$. Find the electric field a distance $z$ above the centre of the ring. 
+
+![](Figures/L1_prob3.png){width=100}
+
+:bulb: **Hint:** Have a look at Example 2.2 in the Griffiths. 
+
+4) (*Griffiths Problem 2.6*)
+Find the electric field a distance $z$ above the center of a flat circular disk of radius $R$ (see figure below) that carries a uniform surface charge $\sigma$. What does your formula give in the limit $R \rightarrow \infty$? Also check the case $z >> R$.
+
+![](Figures/L1_prob4.png){width=100}
+
+5) Find the electric field at a distance $z$ above the midpoint of a uniform line charge, of length $2L$ and charge density $\lambda$ (see figure below).
+
+![](Figures/L2_prob3){width=200}

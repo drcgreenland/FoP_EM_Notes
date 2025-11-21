@@ -1,0 +1,18 @@
+\newcommand{\l}{\mathrm{\mathbf{l}}}
+\newcommand{\E}{\mathrm{\mathbf{E}}}
+\newcommand{\F}{\mathrm{\mathbf{F}}}
+\newcommand{\r}{\mathrm{\mathbf{r}}}
+
+\newcommand{\x}{\mathrm{\mathbf{x}}}
+\newcommand{\y}{\mathrm{\mathbf{y}}}
+\newcommand{\z}{\mathrm{\mathbf{z}}}
+
+# Magnetisation and Polarisation
+
+## Polarisation
+
+*Recommended reading*: Griffiths Section 4.1 - 4.3
+
+## Magnetisation 
+
+*Recommended reading*: Griffiths Section 6.1 - 6.3 (for some bonus reading - check out 6.4)

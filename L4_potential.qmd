@@ -1,0 +1,213 @@
+{{< include macros.qmd >}}
+
+
+<!--
+This section needs editing:
+Little edits here and there to clarify. 
+Diagrams? 
+Improvements to continuous dist. stuff
+Improve intro and outro.
+New/reworked pre-and post-lecture problems. 
+-->
+
+# Electric Potential
+
+*Recommended reading*: Griffiths Section 2.3
+
+## Pre-lecture problem
+
+Before you attempt this problem, it is recommended that you read through the lecture notes, as well as Sections 2.3 and 2.2.4 of the Griffiths. This question also requires some vector calculus, to which you have only just been introduced. Do not worry if you are struggling with this question - we will go through it in the lecture. 
+
+One of these is an impossible electrostatic field. Which one?
+
+(a) $\E = k[ xy \hat{\x} + 2yz \hat{\y} + 3xz \hat{\z} ]$
+
+(b) $\E = k[ y^2 \hat{\x} + (2xy + z^2)\hat{\y} + 2yz \hat{\z} ]$
+
+For the *possible* one, find the potential. Use the origin as your reference point. 
+Check your answer by computing $\nabla V$.
+
+[**Hint:** you must select a specific path to integrate along. The answer is **path-independent**, meaning that you will get the same answer no matter what path you choose--however, it is simply not possible to integrate unless you have a particular path in mind.]
+
+
+
+## Introduction to electric potential
+
+Electric potential is a scalar quantity associated with the electric field. It is defined as the work done by an external force to bring a unit positive charge to a particular point in space (for example, the location of a test charge $Q$) from an arbitrary reference point.
+For the purposes of this lecture course, we will choose infinity ($\infty$) as our reference point - but please note that Griffiths does not use infinity but rather uses the symbol $\mathcal{O}$ to denote an arbitrary reference point.  
+
+We will see later how the concept of electric potential simplifies many calculations in electrostatics, particularly when dealing with electric fields and potential energy.
+
+## Definition of Electric Potential
+
+The electric potential $V$ at some displacement $\r$ is given by
+
+$$ V(\r) = −\int_{\infty}^r \E \cdot \mathrm{d}\l $$ 
+
+
+where $\E$ is the electric field, and $\mathrm{d}\l$  is an infinitesimal displacement vector along the path of the charge. As we have stated, the potential is the work done per unit charge, therefore we can see how the above can be derived. The work done by a force to bring an object from infinity to point $\r$ is given by $ \int_\infty^r \F \cdot \mathrm{d}\l$, therefore the work done per unit charge is $\int_\infty^r \frac{\F}{Q} \cdot \mathrm{d}\l = \int_\infty^r \E \cdot \mathrm{d}\l$. However, you will notice that the expression shown above is $- \int_\infty^r \E \cdot \mathrm{d}\l$ - by convention, we add a minus sign because the direction of the electric field is the direction of *decreasing* potential. Let me explain this. We have seen in the previous lecture that electric field lines point away from a positive charge. If we place a positive test charge in the vicinity of another positive charge, the test charge will move away, in the direction of the electric field. This is the direction of decreasing potential because the charge loses potential energy as it moves away. Hence, the electric field points in the direction of decreasing potential, so the expression for potential must be the negative of the electric field. 
+
+## Potential Difference
+
+The potential difference $V_{ab}$ between two points $\a$ and $\b$ is given by: 
+
+$$
+\begin{split} 
+V_{ab} & = V(\b) − V(\a) \\
+& = -\int_{\infty}^{\b} \E \cdot \mathrm{d} \l + \int_{\infty}^{\a} \E \cdot \mathrm{d} \l \\
+& = -\int_{\infty}^{\b} \E \cdot \mathrm{d} \l - \int_{\a}^{\infty} \E \cdot \mathrm{d} \l \\
+& = -\int_{\a}^{\b} \E \cdot \mathrm{d} \l 
+\end{split}
+$$
+
+
+$$ V_{ab} = V(\b) − V(\a) = -\int_{\a}^{\b} \E \cdot \mathrm{d} \l $$
+
+This quantity represents the work done per unit charge by the electric field in moving a charge from point $\a$ to point $\b$. You should now be able to see clearly, looking back at @eq-workatob from Lecture 2, that this is the work done per unit charge in moving a charge from $a$ to $b$. 
+
+## Electric Potential Due to a Point Charge
+
+For a point charge $q$ located at the origin, the electric potential at a displacement $\r$ can be found by computing the potential difference between infinity and the point $\r$ - this is derived in Section 2.3.4 of the Griffiths and comes out as follows: 
+
+<!--
+that is, the work done per unit charge in bringing a test charge from infinity to point $\r$. Try using the expression for $V_{ab}$ above to do this - you can use $\mathrm{d}\r$ as the displacement vector $\mathrm{d}\l$. You should find that the potential due to a point charge is:-->
+
+
+$$ V(r) = \frac{1}{4\pi\epsilon_0} \frac{q}{r} $$ 
+
+If the point charge is not at the origin, we can generalise the above equation to:
+
+$$ V(\r) = \frac{1}{4\pi\epsilon_0} \frac{q}{r_s} $$ 
+
+where $r_s$ is the separation between $q$ and $\r$, with $\r$ being the displacement with respect to the origin. 
+
+## Electric Potential Due to Multiple Point Charges
+
+The principle of superposition applies to electric potential, just as it does to electric fields and forces. For multiple point charges $q_i$ located at positions $\r_i$, the total potential at a point \r is the sum of the potentials due to each charge: 
+
+$$ V(r) = \frac{1}{4\pi \epsilon_0} \sum_{i} \frac{q_i}{\r_{s_i}} $$ {#eq-Vmulti}
+
+## Electric Potential Due to a Continuous Charge Distribution 
+
+If we have a continuous charge distribution instead of a set of discrete charges, we can think instead of an infinitesimal charge $\mathrm{d}q$, and sum over all of these to find the total potential due to the distribution: 
+
+$$ V(r) = \frac{1}{4\pi \epsilon_0} \int \frac{1}{\r_s} \mathrm{d}q $$
+
+If we have a volume charge distribution, $\mathrm{d}q$ can be formualated as $\rho(\r') \mathrm{d}\tau'$, where $\r'$ is the position of the volume element $\dd \tau'$. Therefore, the potential due to a volume charge distribution is given by   
+
+$$ V(\r) = \frac{1}{4\pi \epsilon_0} \int \frac{\rho(\r')}{\r_s} \mathrm{d} \tau' $${#eq-Vrho}. 
+
+This equation allows us to compute $V$ when we know $\rho$. 
+
+### Approximate potentials at large distances
+
+If you are very far away from a localized charge distribution, it "looks" like a point charge - the potential at a distance $r$ would be approximately $\frac{Q}{4\pi\epsilon_0 r}$. What happens if $Q$ is zero? You may think the potential is (approximately) zero - and you'd be right, in a sense - even if $Q$ is not zero, the potential at large $r$ (aka very far away) is really tiny anyway. But we want to know more than this - we want a more precise approximation of the potential. This is where we can do a **multipole expansion**, which is a expansion of $V$ in powers of $\frac{1}{r}$. We start with the potential at position $\r$, given by @eq-Vrho, with a reminder that $\r$ is the field point (the vector of the position at which we are measuring the potential) and $r_s$ is the separation distance between the volume element $\dd \tau'$ and the field point (see @fig-multipolesetup).
+
+![](Figures/Griffiths_fig3_28.jpg){width=200}{#fig-multipolesetup}
+
+First we transform $r_s$ to be a function of $r$, using the law of cosines:
+
+$$ \r_s^2 = r^2 + (r')^2 - 2r r' \cos\alpha = r^2 \left[ 1 + \left( \frac{r'}{r} \right)^2 + 2 \left( \frac{r'}{r} \right)\cos\alpha \right]. $$
+
+To make this expression easier to work with, we make the substition:
+
+$$ \epsilon = \left( \frac{r}{r'} \right)\left( \frac{r}{r'} - 2\cos\alpha \right) $$
+
+Therefore $r_s$ can expressed as 
+
+$$ \r_s = r \sqrt{1 + \epsilon} $$
+
+
+For points very far away from the charge distribution (which is the range of $r$ we're looking for), $\epsilon$ is much smaller than 1 (because $r'$ is much smaller than $r$). This means that it is appropriate to apply a binomial expansion to $r_s = r\sqrt{1 + \epsilon}$. We want our expansion to be in powers of $1/r$ to reflect what we know about what the potential should be. So we write
+
+$$ \frac{1}{r_s} = \frac{1}{r} (1 + \epsilon)^{-1/2} = \frac{1}{r} \left( 1 - \frac{1}{2} \epsilon + \frac{3}{8} \epsilon^2 - \frac{5}{16} \epsilon^3 + ... \right) $$. 
+
+We can expand this out in terms of $r$, $r'$ and $\alpha$, which gives 
+
+$$ \frac{1}{r_s} &= \frac{1}{r} \left[ 1 - \frac{1}{2} \left( \frac{r'}{r} \right)\left( \frac{r'}{r} - 2\cos\alpha \right) + \frac{3}{8} \left( \frac{r'}{r} \right)^2 \left( \frac{r'}{r} - 2\cos\alpha \right)^2 - \frac{5}{16} \left( \frac{r'}{r} \right)^3 \left( \frac{r'}{r} - 2\cos\alpha \right)^3 + ... \right] $$
+
+From here we must expand out each term and gather powers of $\left( \frac{r'}{r} \right)$, removing any terms in $\left( \frac{r'}{r} \right)^4$ or above as these will be vanishingly small. I strongly encourage you to try this bit of maths out for yourself, as it is not too trivial and will give you some good maths practice. 
+You should reach the result: 
+
+$$ \frac{1}{r_s} = \frac{1}{r} \left[1 + left( \frac{r'}{r} \right) (\cos\alpha) + \left( \frac{r'}{r} \right)^2 (3\cos^2 \alpha - 1)/2 + \left( \frac{r'}{r} \right)^3 (5\cos^3 \alpha - 3\cos\alpha)/2 right] $$
+
+The coefficients of $\left( \frac{r'}{r} \right)$ (the $\cos$-based terms in brackets) can recognised as Legendre polynomials of $\cos\alpha$, denoted as $P_n (\cos\alpha)$ (you can read up on these if you wish but it is not necessary to understand them, you may simply accept the result!) Hence:
+
+$$ \frac{1}{r_s} = \frac{1}{r} \sum_{n=0}^{\infty} \left( \frac{r'}{r} \right)^n P_n (\cos\alpha) $${#eq-potLegendre}
+
+where $\alpha$ is the angle between $\r'$ and $\r$. 
+
+Substituting $\frac{1}{r_s}$ back into @eq-Vrho, we obtain
+
+$$ V(\r) = \frac{1}{4\pi\epsilon_0} \sum_{n=0}^{\infty} \frac{1}{r^{(n+1)}} \int (r')^n P_n(\cos\alpha) \rho(\r') \dd \tau'$$
+
+which is the **multipole expansion** of $V$ in powers of $\frac{1}{r}$, that can be used to approximate the potential of charge distrbution at large distances away from it. Please read Section 3.4.2 of the Griffiths to discover how this formula can be used to find a **dipole moment** for a charge distribution. This is the continuous charge distribution equivalent of the dipole moment that was discussed in Lecture 2.
+
+
+
+
+
+
+
+<!--
+This bit needs more added, including the volume charge distribution and the definitions of the notation. 
+-->
+
+## Relationship Between Electric Field and Potential
+
+The electric field is related to the electric potential by the gradient: 
+
+$$ \E = -\nabla V $$. 
+
+You can see a brief proof of this on page 77 of the Griffiths. This relationship implies that the electric field points in the direction of the greatest decrease of potential.
+
+We can use this relationship to find the electric field when we know the potential. 
+
+## Equipotential Surfaces
+
+Equipotential surfaces are surfaces on which the electric potential is constant. No work is required to move a charge along an equipotential surface, because work is only required to change an object's potential. Electric field lines are always perpendicular to equipotential surfaces.
+
+
+<!--
+ADD COMMENT HERE 
+-->
+
+
+## Practice problems
+
+1) Consider a uniformly charged solid sphere of radius $R$ and total charge $q$. The electric field for this sphere is given by: 
+
+$$
+\left\{
+    \begin{aligned}
+         & \mathrm{Outside \; the \; sphere \; (r > R):} \; \E = \frac{1}{4\pi\epsilon_0} \frac{q}{r^2} \hat{\r}  \\
+         & \mathrm{Inside \; the \; sphere \; (r < R):} \; \E = \frac{1}{4\pi\epsilon_0} \frac{qr}{R^3} \hat{\r} \\
+    \end{aligned}
+\right.
+$$
+
+(a) Find the potential $V(r)$ both inside and outside the sphere. 
+(b) Compute the gradient of $V$ in each region, and check that it yields the correct field.
+(c) Sketch $V(r)$. 
+
+<!--
+this problem is an adapted version of Griffiths 3E problem 2.21
+-->
+
+2) In the worked example for Lecture 1 (see the lecture slides on Blackboard if you were not in attendance) we calculated the electric field a distance $z$ above the midpoint between two equal charges $q$ that are a distance $d$ apart. Use the solution found there to find the electric potential at a distance $z$ above the midpoint between the two charges. 
+
+
+<!--
+this problem is an adapted version of Griffiths 3E problem 2.25(a)
+-->
+
+3) Find the potential at distance $z$ above the midpoint of the line charge shown in the figure below. $\lambda$ is its line charge density. 
+![](Figures/L2_prob3.png){width=200}
+
+**Hint:** You may be tempted to use your result from Q5 of the Lecture 1 problems, however it is easier to directly calulate the potential here, by splitting up the line into infinitesimals segments and summing over the potentials from all segments, working from the formula for potential of a point charge. 
+
+<!--
+???  
+this problem is an adapted version of Griffiths 3E problem 2.25(b)
+-->
+

@@ -1,0 +1,130 @@
+{{< include macros.qmd >}}
+
+# Magnetic Fields and the Lorentz Force Law
+
+*Recommended reading*: Griffiths Section 5.1
+
+## Pre-lecture problem 
+(Griffiths, Problem 5.1)
+
+This problem should help you revise some magnetism concepts from your A-level course.
+
+A particle of charge $q$ enters a region of uniform magnetic field $\B$ (pointing *into* the page). The field deflects the particle a distance $d$ above the original line of flight, as shown in the diagram below. 
+
+![](Figures/L4_preprob.png){width=200}
+
+
+(a) Is the charge positive or negative? 
+ 
+(b) In terms of $a$, $d$, $B$, and $q$, find the momentum of the particle.
+
+
+
+
+      
+## Magnetic Fields
+
+
+In electrostatics, we discussed electric charges as interacting via the electric field. An electric field surrounds a charge, and when a second charge is brought near to the first it interacts with the field, experiencing a force. The electric field diverges from charges - all charges are either a source or a sink for the electric field.
+
+However, the magnetic field does not work in the same way. We cannot think of "magnetic charges" interacting via the magnetic field, because magnetic charges (in other words, magnetic monopoles) have not been found to exist - there is no evidence for single North or South poles. Searches have been made for magnetic monopoles, but without any success, although their existence has not been entirely ruled out. (This is beyond our syllabus but if you are interested you could try looking at [this paper](https://royalsocietypublishing.org/doi/10.1098/rsta.2018.0328).) 
+
+Magnetic fields, denoted by $\B$, are vector fields that are produced by moving electric charges, for example electric currents. The direction of the magnetic field at a given point in space is the direction in which the north end of a compass needle would point when placed at that point. 
+
+There are some important differences between the behaviour of charges in electric and magnetic fields. In electric fields, the force on a charge is parallel to the field lines – a positive charge moves along the field lines in the direction indicated. In magnetic fields, the force on a moving charge is perpendicular to the field lines.
+
+As with the electric field, the magnetic field can be represented using field lines and the density of field lines represents the strength of the field. The direction of the magnetic field at a given point in space is defined as the direction in which a compass needle would point if placed at this point. In other words, it is the direction in which the North pole of a magnetic would move (i.e. away from another North pole). The direction of the magnetic field due to an electric current is given by the right-hand rule. If you point the thumb of your right hand in the direction of the current and then curl the fingers the field is in the direction of the curl of your fingers.
+
+In the same way as the electric field, the strength (or in other words, the magnitude) of the magnetic field is usually indicated by the density of the field lines. Magnetic field strength is measured in the SI unit of Tesla (T) or in Gauss, where 1 Tesla = $10^4$ Gauss. 
+
+![*Left:* The magnetic field produced by a bar magnet. *Right:* Section of a wire (yellow) carrying current $I$ and the magnetic field $\B$ that it produces.](Figures/MagFields.png){width=500}
+
+Because there are no magnetic monopoles, magnetic field lines always form closed loops - as opposed to electric field lines, which begin and end on charges. 
+
+### The Lorentz Force Law
+
+As we have seen in the previous lectures on electrostatics, electric charges exert forces on one another as a result of the electric fields that arise from them. In the same way, a magnetic field exerts a force on a moving charge, because the moving charge produce its own magnetic field and the two fields interact, producing a force.
+
+The magnetic force on a moving charge is given by
+
+$$
+\F_B = q(\v \times \B) {#eq-lorentz}
+$$
+
+The term $\v \times \B$ represents the cross product of the velocity and magnetic field vectors. As you will know, the cross product of two vectors results in a vector that is perpendicular to both. Therefore, the direction of $\F$ is perpendicular to both $\v$ and $\B$. You will also know that the cross product of two vectors $\a$ and $\b$ is equal to $ab \sin\theta$. Hence, the magnitude of the magnetic force is given by:
+
+$$
+F_B = qvB \sin\theta
+$$
+
+
+This is not the full picture, however. The **Lorentz Force Law** describes the total force on a moving charge, including the effect of both electric and magnetic fields. The force $\F$ experienced by a charge $q$ moving with a velocity $\v$ in an electric field $\E$ and a magnetic field $\B$ is given by: 
+
+$$
+\F = q(\E + \v \times \B)
+$$
+
+
+The Lorentz force law is responsible for the circular motion of charged particles in magnetic fields, as represented in the figure below: 
+
+![](Figures/lorentz_motion.png){width=500}
+
+
+The centripetal force required for circular motion is supplied by the magnetic force. This principle is used in cyclotrons and other particle accelerators.
+
+The Lorentz force law also leads to the Hall effect, which is the development of a transverse electric field in a solid material when it carries an electric current and is placed in a magnetic field that is perpendicular to the current.
+
+
+## Work done by magnetic forces? 
+The work done on a charge when a magnetic force acts upon it,
+$\dd W_{mag} = \F_{mag} \cdot \dd l = Q(\v \times \B)\cdot \v \dd t$$
+
+By definition, $\v \times \B$ must be perpendicular to both $\B$ and $\v$ (unless they are parallel to one another, in which case there is no force anyway because the cross-product is zero.) Hence the dot product $(\v \times \B)\cdot \v \dd t$ is zero, implying that magnetic forces do no work. How can this be?! 
+E.g. the toqrue exerted by gravirty on a gyroscope changes the angular momentum of the gyroscope 
+
+<!-- 
+TIDY UP AND FINISH THIS BIT
+--> 
+
+
+## Magnetic field of currents{#sec-magcurrents1}
+
+When we talk about currents we are referring to a flow of charge through a wire. We define the current as the amount of *charge per unit time* passing a point in the wire. 
+We can imagine a current as a moving line charge with velocity $\v$ and linear charge density $\lambda$. The current in the wire is given by $I = \lambda \v$ - you should be able to see upon closer inspection that this is equivalent to charge per unit time. 
+
+
+Currents are moving charges and therefore they also experience a force in the prescence of a magnetic field. We can use the Lorentz force law to work out what this force will be.  If we think of the current as being made up of infinitesimal charges $\mathrm{d} q$, integrating to sum all of these across the length of the wire would give the total charge in the wire. Hence, by analogy to @eq-lorentz, the force on the wire would be
+
+$$ \F_{mag} = \int (\v \times \B) \mathrm{d} q $${#eq-currentforce}
+
+We can express $\mathrm{d}q$ as $\lambda \mathrm{d} l$, hence the magnetic force becomes
+
+$$ \ begin{split} 
+\F_{mag} &= \int (\v \times \B) \lambda \mathrm{d} l \\
+&= \int (\I \times \B) \mathrm{d} l 
+\end{split}
+$${#eq-currentforce2}
+
+$\I$ and $\mathrm{d} \l$ point in the same direction, therefore it is valid (and more commonly encountered) to express @eq-currentforce2 as
+
+
+$$ \F_{mag} &= \int I (\mathrm{d} \l \times \B) $${#eq-currentforce3}. 
+
+
+
+## Practice problems
+
+1) In the lecture we sketched and calculated the trajectory of the particle in Griffiths Example 5.2, in the case where the particle was released from the origin at zero velocity (see the lecture slides on Blackboard if you were not in attendance). 
+
+Find and sketch the trajectory of the particle in Example 5.2, if it starts at the origin with velocity:
+(a) $(E/B) \hat{\y}$
+(b) $(E/2B) \hat{\y}$
+(c) $(E/B) (\hat{\y} + \hat{\z}$)
+
+2) (*Griffiths Problem 5.3*)
+
+In 1897, J. J. Thomson “discovered” the electron by measuring the charge-to-mass ratio of “cathode rays” (actually, streams of electrons, with charge $q$ and mass $m$) as follows:
+
+(a) First he passed the beam through uniform crossed electric and magnetic fields $\E$ and $\B$ (mutually perpendicular, and both of them perpendicular to the beam), and adjusted the electric field until he got zero deflection. What was the speed of the particles in terms of $E$ and $B$ when he reached zero deflection?
+
+(b) Then he turned off the electric field, and measured the radius of curvature, $R$, of the beam, as deflected by the magnetic field alone. In terms of $E$, $B$, and $R$, what is the charge-to-mass ratio ($q/m$) of the particles?

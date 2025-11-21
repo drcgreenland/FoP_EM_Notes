@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.551">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Electromagnetism - 2&nbsp; Work and Energy in Electrostatics</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./L3_potential.html" rel="next">
+<link href="./L1_electrostatics.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./L2_workenergy.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Work and Energy in Electrostatics</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Electromagnetism</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./L1_electrostatics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Electrostatics - Charges, Forces &amp; Fields</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./L2_workenergy.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Work and Energy in Electrostatics</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./L3_potential.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Electric Potential</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./L4_magfields.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Magnetic Fields and the Lorentz Force Law</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./L5_magfieldscurrents.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Currents &amp; the Biot-Savart Law</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./L6_magvectorpotential.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Magnetic Vector Potential</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./L7_gausslaw.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Gauss’s Law</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./L8_amperelaw.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Ampere’s Law and Solenoids</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./L9_faradaylaw.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Faraday’s Law and Lenz’s Law</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./L10_maxwellfreespace.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Maxwell’s Equations in Free Space</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./L11_magnetisationpolar.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Magnetisation and Polarisation</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./L12_maxwellmatter.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Maxwell’s Equations in Matter</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./L13_capacitorsinductors.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Capacitors and Inductors</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./L14_circuits.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Circuits</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./L15_impedance.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">L15_impedance.html</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./summary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#work-done-to-move-a-charge" id="toc-work-done-to-move-a-charge" class="nav-link active" data-scroll-target="#work-done-to-move-a-charge"><span class="header-section-number">2.1</span> Work done to move a charge</a></li>
+  <li><a href="#energy-of-a-point-charge-distribution" id="toc-energy-of-a-point-charge-distribution" class="nav-link" data-scroll-target="#energy-of-a-point-charge-distribution"><span class="header-section-number">2.2</span> Energy of a point charge distribution</a></li>
+  <li><a href="#energy-of-a-continuous-charge-distribution" id="toc-energy-of-a-continuous-charge-distribution" class="nav-link" data-scroll-target="#energy-of-a-continuous-charge-distribution"><span class="header-section-number">2.3</span> Energy of a continuous charge distribution</a></li>
+  <li><a href="#work-and-the-electric-dipole" id="toc-work-and-the-electric-dipole" class="nav-link" data-scroll-target="#work-and-the-electric-dipole"><span class="header-section-number">2.4</span> Work and the electric dipole</a>
+  <ul class="collapse">
+  <li><a href="#electric-dipole-field" id="toc-electric-dipole-field" class="nav-link" data-scroll-target="#electric-dipole-field"><span class="header-section-number">2.4.1</span> Electric dipole field</a></li>
+  <li><a href="#energy-of-a-dipole-in-an-external-electric-field" id="toc-energy-of-a-dipole-in-an-external-electric-field" class="nav-link" data-scroll-target="#energy-of-a-dipole-in-an-external-electric-field"><span class="header-section-number">2.4.2</span> Energy of a dipole in an external electric field</a></li>
+  </ul></li>
+  <li><a href="#practice-problems" id="toc-practice-problems" class="nav-link" data-scroll-target="#practice-problems"><span class="header-section-number">2.5</span> Practice problems</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Work and Energy in Electrostatics</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<!--
+This section needs editing:
+Little edits here and there to clarify. 
+Diagrams? 
+Finish writing out most sections tbh. 
+-->
+<p><em>Recommended reading</em>: Griffiths Section 2.4</p>
+<section id="work-done-to-move-a-charge" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="work-done-to-move-a-charge"><span class="header-section-number">2.1</span> Work done to move a charge</h2>
+<p>In general, the work done to move an electric charge is calculated in the same way we calculate mechanical work when solving mechanics problems, taking the form:</p>
+<p>$$</p>
+<p>W = </p>
+<p>$$</p>
+<p>Let’s say we have some configuration of source charges, and we want to move a test charge past these charges, as represented in this diagram:</p>
+<p><img src="Figures/workdone_charge.png" class="img-fluid" width="300"></p>
+<p>Let us work out how much work we need to do to move the charge along this path. The work done to move a charge from point <strong>a</strong> to point <strong>b</strong> is given by:</p>
+<p>$$</p>
+<p>W = _{}^{} </p>
+<p>$$</p>
+<p>Each of the charges is exerting a force <span class="math inline">\(\mathrm{\mathbf{F}}= Q \mathrm{\mathbf{E}}\)</span> on the test charge, therefore the total work becomes:</p>
+<p>$$</p>
+<p>W = - Q _{}^{} = Q[V( - V()]</p>
+<p>$${#eq-workatob}</p>
+<p>If you want to bring a charge <span class="math inline">\(Q\)</span> in from very far away and place it at point <span class="math inline">\(\mathrm{\mathbf{r}}\)</span>, you the work you have to do is</p>
+<p><span class="math display">\[W = Q[V(\mathrm{\mathbf{r}}) - V(\infty)]\]</span></p>
+<p>which, if you use a reference point at infinity, simply becomes</p>
+<p><span class="math display">\[W = Q V(\mathrm{\mathbf{r}})\]</span></p>
+<p>which should be a familiar expression from your previous studies.</p>
+</section>
+<section id="energy-of-a-point-charge-distribution" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="energy-of-a-point-charge-distribution"><span class="header-section-number">2.2</span> Energy of a point charge distribution</h2>
+<p>If you want to assemble a group of point charges, the work required to do so is given by</p>
+<p><span id="eq-workMulti"><span class="math display">\[ W = \frac{1}{2} \sum_{i=1}^n q_i V(\mathrm{\mathbf{r}}_i)  \tag{2.1}\]</span></span></p>
+<p>Let’s break this down. To calculate the work done to assemble a group of point charges, we need to first realise the fact that the first charge to join the group does not take any work, because there is no electric field present for it to interact with. It is only when we try to introduce further charges to configuration that work needs to be done. We therefore choose one of our charges arbitrarily to be the first charge. For every subsequent charge that is brought in, the work done to bring it in is proportional to <span class="math inline">\(q_i V(\mathrm{\mathbf{r}}_i)\)</span>, where <span class="math inline">\(q_i\)</span> is the charge in question and <span class="math inline">\(V(\mathrm{\mathbf{r}}_i)\)</span> is the potential at position <span class="math inline">\(\mathrm{\mathbf{r}}_i\)</span> (position of <span class="math inline">\(q_i\)</span>) due to all the other charges that are present. Summing over all of these will result in the work needed to add every charge to the distribution, and therefore gives the potential energy of the whole charge configuration. Summing the potentials of each charge with respect to the rest of the group of charges will lead to each pair of charges being considered twice, which is not physical, therefore the factor of <span class="math inline">\(\frac{1}{2}\)</span> is introduced to remove this problem. For a full derivation and explanation of <a href="#eq-workMulti" class="quarto-xref">Equation&nbsp;<span class="quarto-unresolved-ref">eq-workMulti</span></a>, see Griffiths Section 2.4.2.</p>
+</section>
+<section id="energy-of-a-continuous-charge-distribution" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="energy-of-a-continuous-charge-distribution"><span class="header-section-number">2.3</span> Energy of a continuous charge distribution</h2>
+<p>Now consider the situation where we have a continuous charge distribution instead of a collection of point charges. It is important to note here that a charge distribution is never truly continuous - charge always comes in the form of discrete point charges such as electrons, protons etc - however if we have a very large amount of point charges we can consider them to be a continuous distribution with some associated charge density. For a volume charge density, <a href="#eq-workMulti" class="quarto-xref">Equation&nbsp;<span class="quarto-unresolved-ref">eq-workMulti</span></a> becomes</p>
+<p><span id="eq-cont1"><span class="math display">\[ W = \frac{1}{2}\int \rho V \mathrm{d} \tau \tag{2.2}\]</span></span></p>
+<p>where <span class="math inline">\(V\)</span> denotes volume and <span class="math inline">\(\mathrm{d} \tau\)</span> is the infinitesimal volume element.</p>
+<p>The same formulation works for a surface charge density…</p>
+<p><span class="math display">\[ W = \frac{1}{2}\int \sigma V \mathrm{d} a\]</span></p>
+<p>… and a line charge density</p>
+<p><span class="math display">\[ W = \frac{1}{2}\int \lambda V \mathrm{d} l\]</span></p>
+<p>as well.</p>
+<p>The energy of a continuous charge distribution can also be expressed in the following way:</p>
+<p><span class="math display">\[ W = \frac{\epilon_0}{2} \left( int_{\mathcal{V}} E^2 \mathrm{d} \tau + \oint_{\mathcal{S}} V \mathrm{\mathbf{E}}\cdot \mathrm{d} \mathrm{\mathbf{a}}\]</span>.{#eq-cont2}</p>
+<p>We will not look at the derivation for this now, because it involves concepts not yet encountered in this course. After Lecture 7, I would recommend that you look at Section 2.4.3 of the Griffiths for the derivation of <a href="#eq-cont2" class="quarto-xref">Equation&nbsp;<span class="quarto-unresolved-ref">eq-cont2</span></a>.</p>
+<p>If we integrate <a href="#eq-cont2" class="quarto-xref">Equation&nbsp;<span class="quarto-unresolved-ref">eq-cont2</span></a> over all space, the surface integral goes to zero and we end up with:</p>
+<p><span class="math display">\[ W = \frac{\epilon_0}{2} \int_{\mathrm{all \; space}} E^2 \mathrm{d} \tau \]</span>.{#eq-cont3}</p>
+<!--
+-->
+</section>
+<section id="work-and-the-electric-dipole" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="work-and-the-electric-dipole"><span class="header-section-number">2.4</span> Work and the electric dipole</h2>
+<section id="electric-dipole-field" class="level3" data-number="2.4.1">
+<h3 data-number="2.4.1" class="anchored" data-anchor-id="electric-dipole-field"><span class="header-section-number">2.4.1</span> Electric dipole field</h3>
+<p>First of all, let’s talk about what an electric dipole is. An electric dipole is a combination of a positive and negative charge, equal in magnitude, a small distance from each other. A visual representation of the electric field of a dipole is shown below:</p>
+<p><img src="Figures/dipole_field.png" class="img-fluid" width="300"></p>
+<p>The vector field for an electric dipole can be calculated by summing the vector fields due to the two charges.</p>
+<p>Let’s consider the dipole in the diagram below. The dipole is oriented along the <span class="math inline">\(y\)</span>-axis, and we define an arbitrary point <span class="math inline">\(P\)</span> on the <span class="math inline">\(x\)</span>-axis:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Figures/dipole_diagram.png" class="img-fluid figure-img" width="300"></p>
+<figcaption>A dipole represented in the <span class="math inline">\(x\)</span>-<span class="math inline">\(y\)</span> plane, where <span class="math inline">\(d\)</span> is the distance between the charges.</figcaption>
+</figure>
+</div>
+<p>For dipoles, we define a quantity known as the electric dipole moment, given by $ = q $. The electric dipole moment is the product of the charge <span class="math inline">\(q\)</span> (pay attention here! This is the charge on </p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Figures/dipole_moment.png" class="img-fluid figure-img" width="300"></p>
+<figcaption>A diagram of an electric dipole, showing the vector quantities <span class="math inline">\(\mathrm{\mathbf{d}}\)</span> and <span class="math inline">\(\mathrm{\mathbf{p}}\)</span>, which are the vector length of the dipole and the dipole moment, respectively.</figcaption>
+</figure>
+</div>
+<p>The field produced by the dipole at point <span class="math inline">\(P\)</span> on the <span class="math inline">\(x\)</span>-axis is given by: <span class="math display">\[
+\mathrm{\mathbf{E}}= \frac{1}{4\pi \epsilon_0} \frac{qd}{ \left( x^2 \left( \frac{d}{2} \right)^2 \right)^{\frac{3}{2}} }
+\]</span></p>
+<p>Does this look familiar? If you attempted Q1 of the Problem Set for Lecture 1, you have actually already calculated the electric field of an electric dipole! The only difference is that in that question you calculated the field at a point on the <span class="math inline">\(z\)</span>-axis, but otherwise it should be same mathematical expression. In that problem you were asked to think about the dipole field in different ranges of values of <span class="math inline">\(z\)</span>. If we look at the above expression, we can see that in the limit <span class="math inline">\(x &gt;&gt; d\)</span> (in other words, when we are at a distance <span class="math inline">\(x\)</span> from the dipole that is much larger than the size of the dipole <span class="math inline">\(d\)</span>) the electric field due to the dipole can be reduced to: <span class="math display">\[
+\mathrm{\mathbf{E}}= \frac{1}{4 \pi \epsilon_0} \frac{\mathrm{\mathbf{p}}}{x^3}
+\]</span></p>
+<p>So the field is very similar to that of a point charge, however it drops off even faster with distance. If we look at the field lines of the dipole, we can see how this happens - instead of spreading straight out from the charges, the field lines bend towards the axis of the dipole, therefore diverging faster than the point charge case.</p>
+</section>
+<section id="energy-of-a-dipole-in-an-external-electric-field" class="level3" data-number="2.4.2">
+<h3 data-number="2.4.2" class="anchored" data-anchor-id="energy-of-a-dipole-in-an-external-electric-field"><span class="header-section-number">2.4.2</span> Energy of a dipole in an external electric field</h3>
+<p>Now, back to the topic at hand: work and energy.</p>
+<p>Consider a dipole that is placed within a uniform electric field. The force on each charge has magnitude <span class="math inline">\(qE\)</span>, but since these forces are in opposite directions there is no net force on the dipole. There is however a torque about the centre of the dipole. See <a href="#fig-dipoleExt" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-dipoleExt</span></a> to get a feel for this.</p>
+<p><img src="Figures/dipole_extE.jpg" class="img-fluid" width="400" alt="Representation of a dipole placed in an external uniform electric field. \theta is the angle the dipole takes to the direction of the external electric field and F is the force on each charge of the dipole due to the external field">{#fig-dipoleExt}</p>
+<p>The torque about the centre of the dipole in <a href="#fig-dipoleExt" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-dipoleExt</span></a> is</p>
+<p><span class="math display">\[ \tau = 2 F \frac{d}{2} \sin\theta = qEd\sin\theta = p E \sin\theta \]</span></p>
+<p>This can be expressed in vector form as <span class="math display">\[ \mathrm{\mathbf{\tau}} = \mathrm{\mathbf{p}}\times \mathrm{\mathbf{E}}\]</span></p>
+<p>The torque will cause the dipole to rotate and align itself with the electric field, as shown here:</p>
+<p><img src="Figures/dipole_align.png" class="img-fluid" width="300">{#fig-dipoleAlign}</p>
+<p>If we think about it in terms of work - we Would have to do work on the dipole to rotate it away from the position where it is aligned with the electric field (which is when the positive charge is on the right). This work is stored as potential energy. The dipole does work (in other words it loses potential energy) rotating towards its aligned position.</p>
+<p>The work done is the integral of the product of the torque and the angle turned through:</p>
+<p><span class="math display">\[
+\begin{split}
+W &amp; = \int_{\theta_0}^{\theta} \tau \mathrm{d} \theta \\
+&amp; = \int_{\theta_0}^{\theta} pE\sin\theta \mathrm{d} \theta \\
+&amp; = [-pE \cos \theta]_{\theta_0}^{\theta}
+\end{split}
+\]</span></p>
+<p>The change in potential energy is <span class="math inline">\(\Delta U = W\)</span>, hence:</p>
+<p><span class="math display">\[ \Delta U = U(\theta_0) - U (\theta) = pE(\cos\theta_0 - \cos\theta) \]</span></p>
+<p>The zero of potential energy <span class="math inline">\(U(\theta_0)\)</span> can be chosen to be anywhere, so we can choose it to correspond to <span class="math inline">\(\theta = 90^{\circ}\)</span> in which case <span class="math inline">\(U = -pE\cos\theta\)</span>.</p>
+<p>Not surprisingly, the energy is at a minimum when the dipole is aligned with the field, at which point the torque will be zero.</p>
+</section>
+</section>
+<section id="practice-problems" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="practice-problems"><span class="header-section-number">2.5</span> Practice problems</h2>
+<!--
+Use this problem set to guide the content of the lecture notes/lecture!
+-->
+<ol type="1">
+<li>As discussed in the lecture, consider a collection of 3 charges that form 3 sides of a square, as shown:</li>
+</ol>
+<p><img src="Figures/L3_3charges.png" class="img-fluid" width="200"></p>
+<p>In the lecture, we calculated the amount of work it takes to bring in a 4th charge <span class="math inline">\(+q\)</span> from far away and place it in the 4th corner of the square.</p>
+<p>Calculate the total work it takes to assemble all 4 charges into the square configuration.</p>
+<!--
+Q1 is Prob 2.31(b) from 3Ed Griffiths, it's 2.32 in the 5Ed Griffiths.
+Q2 is Problem 2.35 from 5Ed. 
+-->
+<ol start="2" type="1">
+<li>(<em>Griffiths Problem 2.35</em>) Find the energy stored in the uniformly charged solid sphere of radius <span class="math inline">\(R\)</span> and charge <span class="math inline">\(q\)</span>. Do it 3 different ways:</li>
+</ol>
+<ol type="a">
+<li><p>Use the equation $ W = V $. You found the potential in Q1 of the Lecture 1 Problem Set.</p></li>
+<li><p>Use the equation $ W = _{} E^2 $. The electric field is given in Q1 of the Lecture 1 Problem Set.</p></li>
+<li><p>Use the equation $ W = ( int_{} E^2 + _{} V $. Take a spherical volume of radius <span class="math inline">\(a\)</span>. What happens as <span class="math inline">\(a \rightarrow \infty\)</span>?</p></li>
+</ol>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./L1_electrostatics.html" class="pagination-link" aria-label="Electrostatics - Charges, Forces &amp; Fields">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Electrostatics - Charges, Forces &amp; Fields</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./L3_potential.html" class="pagination-link" aria-label="Electric Potential">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Electric Potential</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

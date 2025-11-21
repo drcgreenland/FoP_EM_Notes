@@ -1,0 +1,156 @@
+{{< include macros.qmd >}}
+
+# Currents & the Biot-Savart Law
+
+*Recommended reading*: Griffiths Section 5.2
+
+## Pre-lecture problem 
+
+Find the magnitude of the attractive force between two long, parallel wires which are a distance $d$ apart, carrying currents $I_1$ and $I_2$. 
+
+## More about currents {#sec-morecurrents}
+
+In the previous lecture we introduced the concept of currents and used the Lorentz force law to derive an expression for the force on a current-carrying wire. However, our treatment of currents is incomplete. In the previous lecture we dealt with currents in one dimension, imagining them to be a line charge flowing down wire. But in practice, when solving problems and working as physicists, we generally have to deal with higher dimensional currents as these are more realistic. 
+
+When we dealt with line currents at the end of the previous lecture, we imagined a current as a moving line charge with velocity $\v$ and linear charge density $\lambda$. But when charge flows over a surface, we are suddenly dealing with a surface charge density instead. We can no longer think of current as simply charge per unit time. We also need to consider how the charge is distributed across the width of the surface. So, we define the **surface current density**, $\K$, as follows. 
+
+![](Figures/surface_current.png){width=300}{#fig-surfcurr}
+
+Consider @fig-surfcurr - this shows a "ribbon" of infinitesimal width $\dd l_{perp}$ running parallel to the flow. $l_{\perp}$ is the width perpendicular to the flow. If the infinitesimal current in this ribbon is $\dd \I$, the **surface current density** $\K$ is given by 
+
+$$ \K = \frac{\dd \I}{\dd l_{\perp}} $$
+
+
+
+So, the surface current density is the current per unit width-perpendicular-to-flow. 
+
+If the surface charge density (of *mobile* charges, we do not consider charges which are stationary within the material) is $\sigma$, and its velocity is $\v$, then we can express
+$$ \K = \sigma \v $$. 
+
+You may notice this looks familiar - this is the surface equivalent of $\I = \lambda \v$. 
+
+It is fairly clear to see then that the magnetic force on the surface current is 
+
+$$ \F_{mag} = \int  (\v \times \B) \sigma \dd a = \int  (\K \times \B) \dd a $$
+
+
+
+Similarly, when charge flow is distributed throughout a volume, we need to define a **volume current density**. This is $\J$, and we define it as follows. 
+
+![](Figures/vol_current.png){width=300}{#fig-volcurr}
+
+Consider @fig-volcurr - this time we have a "tube" of infinitesimal area $\dd a_{perp}$ parallel to the flow. $a_{\perp}$ is the area perpendicular to the flow. If the current in this tube is $\dd \I$, the **volume current density** $\K$ is given by 
+
+$$ \J = \frac{\dd \I}{\dd a_{\perp}} $${#eq-J}
+
+If the volume charge density (of mobile charges) is $\rho$ and its velocity is $\v$, then
+
+$$ \J = \sigma \v $$. 
+
+Therefore, the magnetic force on a volume current is
+
+$$ \F_{mag} = \int  (\v \times \B) \rho \dd \tau = \int  (\J \times \B) \dd \tau $$. 
+
+
+### The continuity equation
+
+@eq-J can be rearranged to show that current crossing a surface $\mathcal{S}$ can be expressed as 
+
+$$ I = \int_{\mathcal{S}} J \dd a_{\perp} = \int_{\mathcal{S}} \J \cdot \dd \a $$
+
+The current crossing a surface can also be thought of as the total charge per unit time leaving a volume $\mathcal{V}$ is 
+
+$$ \int_{\mathcal{S}} \J \cdot \dd \a = \int_{\mathcal{V}} (\nabla \cdot \J) \dd \tau =  $$
+
+We know that charge is conserved, so this must surely have some consequences for currents...? 
+
+<!--
+Finish "continuity equation" stuff"
+--> 
+
+### Steady currents 
+A steady current is defined as a continuous flow of charge that goes on forever, without changing and without charge piling up anywhere. In reality, there is no such current, but for the purposes of this course we can model current-carrying wires as carrying steady currents. If the current wasn't a steady current, the magnetic field produced by the current would be varying as a function of time, and we would no longer be in the realm of magnetostatics, which deals in static (non-time varying) magnetic fields. 
+
+## The Biot-Savart Law
+We saw in the last lecture that a  current-carrying wire experiences a magnetic force when in the prescence of an applied magnetic field, and we found an expression for the magnetic force on a segment of current-carrying wire. Ultimately, current-carrying wires experience this force because they produce their own magnetic field which interacts with the applied magnetic field. The Biot-Savart Law is a formula for the magnetic field of a steady current - in fact it exclusively applies to steady currents. 
+
+
+The Biot-Savart Law takes the following form, for a steady *line* current:
+
+$$\B(\r) = \frac{\mu_0}{4\pi} \int \frac{\I \times \hat{\r_s} }{\r_s^2} \mathrm{d}l' =  \frac{\mu_0}{4\pi} \int I \frac{\mathrm{d} \l' \times \hat{\r_s} }{\r_s^2} $$
+
+
+However we know from @sec-morecurrents that we need to consider surface and volume currents as well.... so..
+
+[biot-savart for surface current]
+[biot-savart for volume current]
+
+### Derivation: the magnetic field of a straight current-carrying wire
+
+In your previous studies you may have come across the formula for the magnetic field at a distance from a current-carrying wire. Have you ever wondered where this equation came from? Turns out it is derived using the Biot-Savart Law - I'm going to guide you the derivation here, to demonstrate how we use the Biot-Savart Law. 
+
+Our task here is to find the magnetic field at a distance $s$ from a long, straight wire carrying a steady current $I$. 
+
+**Important:** When we talk about a "long" wire, we are talking about a wire that is so long that it can be considered infinitely long - so that we can assume it carries a steady current (see "aside on steady currents" above). In real life, wires that carry currrent are usually part of a closed circuit, so we can consider most current-carrying wires to be carrying steady currents, as the current in closed circuit will go on forever (until a switch is opened, a battery dies, a component breaks, and so on...). 
+
+Let us first visualise the problem with a diagram: 
+![](Figures/BS-example-1.png){width=200}{#fig-BS-ex1}
+
+This figure is taken from the Griffiths, therefore the curly "r" pointing from $\mathrm{d} \l'$ to $P$ should be interpreted as $\r_s$ in our notation. As a reminder, the Biot-Savart Law is given by
+
+$$\B(\r) =  \frac{\mu_0}{4\pi} \int I \frac{\mathrm{d} \l' \times \hat{\r_s} }{\r_s^2} $$
+
+In @fig-BS-ex1,  $\mathrm{d} \l' \times \hat{\r_s}$ points out of the page (because it must be perpendicular to both vectors) and has magnitude $\mathrm{d} l' \sin\alpha$. However, it is more convenient in this problem for us to to work with the angle $\theta$, because we can use trigonometric identities to relate $\theta$ more easily to the other variables in our problem. Therefore we can use the angle addition formula $\sin(A + B) = \sin A \cos B + \cos A \sin B$, to find
+$$ \sin\alpha = \sin(90 + \theta) = \sin(90)\cos\theta + \cos(90)\sin\theta = \cos\theta $$
+
+Hence, the magnitude of $\mathrm{d} \l' \times \hat{\r_s}$ is
+
+$$ \mathrm{d} l' \cos\theta $$ 
+
+We can also say that $l' = s \tan\theta$, therefore
+
+$$ \begin{split} 
+\frac{\mathrm{d} l'}{\mathrm{d} \theta} &=  \frac{\mathrm{d} }{\mathrm{d} \theta} s \tan\theta \\
+\dd l' &=  \frac{s}{ \cos^2 \theta} \dd \theta
+\end{split}
+$$ 
+
+Finally, we can see that $s = r_s \cos \theta$, so we can state
+
+$$ \frac{1}{\r_s^2} = \frac{\cos^2 \theta}{s^2} $$
+
+We now have everything we need to compute the integral in the Biot-Savart Law. We  can integrate with respect to $\theta$, and find the integral between two angles $\theta_1$ and $\theta_2$, as represented in this figure:
+
+![](Figures/BS-example-2.png){width=200}
+
+Therefore
+
+$$ \begin{split} 
+B &= \frac{\mu_0 I}{4 \pi} \int_{\theta_1}^{\theta_2} \left( frac{\cos^2 \theta }{s^2} \right) \left( \frac{s}{\cos^\theta} \right) \cos\theta \dd \theta   \\
+ &= \frac{\mu_0 I}{4 \pi s} \int_{\theta_1}^{\theta_2}  \cos\theta \dd \theta \\
+ &= \frac{\mu_0 I}{4 \pi s} (\sin\theta_2 - \sin \theta_1) 
+\end{split}
+$$ 
+
+The above equations represents the $B$-field at a distance $s$ from a short section of wire between two arbitrary anglular positions $\theta_1$ and $\theta_2$. This is not physical however, because a short section of wire cannot carry a steady current. Therefore let's think about what happens when we extend the length of the wire to infinity. For an infinitely long wire, $\theta_1 = -\pi/2$ and $\theta_2 = \pi/2$. Hence,  the magnitude of the $B$-field at a distance $s$ from a long current-carrying wire is 
+
+$$ B = \frac{\mu_0 I}{2\pi s}. $$#eq-Bwire
+
+If you didn't manage the pre-lecture problem, try it again now using what you have learned in this lecture.  
+
+### Biot-Savart law for surface and volume currents
+
+<!--
+Explain surface/volume currents, following on from intro to currents from earlier. 
+--> 
+
+$$\B(\r) = \frac{\mu_0}{4\pi} \int \frac{\I \times \hat{\r_s} }{\r_s^2} \mathrm{d}l' =  \frac{\mu_0}{4\pi} \int I \frac{\mathrm{d} \l' \times \hat{\r_s} }{\r_s^2} $$
+
+
+## Practice problems
+
+1) A current $I$ flows down 
+
+2)
+
+3) 

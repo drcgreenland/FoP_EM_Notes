@@ -1,0 +1,46 @@
+project:
+  type: book
+  output-dir: docs
+book:
+  title: "Electromagnetism"
+  author: "Claire Greenland"
+  date: "03/25/2024"
+  
+  number-sections: true
+  crossref:
+    fig-labels: arabic
+    eq-labels: arabic 
+  
+  chapters:
+    - index.qmd
+    - L1_electrostatics.qmd
+    - L2_gausslaw.qmd
+    - L3_workenergy.qmd
+    - L4_potential.qmd
+    - L5_magfields.qmd
+    - L6_magfieldscurrents.qmd
+    - L7_amperelaw.qmd
+    - L8_magvectorpotential.qmd
+    - L9_faradaylaw.qmd
+    - L10_maxwellfreespace.qmd
+    - L11_magnetisationpolar.qmd
+    - L12_maxwellmatter.qmd
+    - L13_capacitorsinductors.qmd
+    - L14_circuits.qmd
+    - L15_impedance.qmd 
+    - summary.qmd
+    - references.qmd
+
+
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: cosmo
+  pdf:
+    documentclass: scrreprt
+
+
+
+

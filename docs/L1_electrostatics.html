@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.551">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Electromagnetism - 1&nbsp; Electrostatics - Charges, Forces &amp; Fields</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./L2_workenergy.html" rel="next">
+<link href="./index.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./L1_electrostatics.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Electrostatics - Charges, Forces &amp; Fields</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Electromagnetism</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./L1_electrostatics.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Electrostatics - Charges, Forces &amp; Fields</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./L2_workenergy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Work and Energy in Electrostatics</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./L3_potential.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Electric Potential</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./L4_magfields.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Magnetic Fields and the Lorentz Force Law</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./L5_magfieldscurrents.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Currents &amp; the Biot-Savart Law</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./L6_magvectorpotential.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Magnetic Vector Potential</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./L7_gausslaw.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Gauss’s Law</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./L8_amperelaw.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Ampere’s Law and Solenoids</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./L9_faradaylaw.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Faraday’s Law and Lenz’s Law</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./L10_maxwellfreespace.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Maxwell’s Equations in Free Space</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./L11_magnetisationpolar.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Magnetisation and Polarisation</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./L12_maxwellmatter.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Maxwell’s Equations in Matter</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./L13_capacitorsinductors.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Capacitors and Inductors</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./L14_circuits.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Circuits</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./L15_impedance.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">L15_impedance.html</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./summary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#pre-lecture-problem" id="toc-pre-lecture-problem" class="nav-link active" data-scroll-target="#pre-lecture-problem"><span class="header-section-number">1.1</span> Pre-lecture problem</a></li>
+  <li><a href="#sec-charge" id="toc-sec-charge" class="nav-link" data-scroll-target="#sec-charge"><span class="header-section-number">1.2</span> Electric Charges</a></li>
+  <li><a href="#some-definitions-and-important-notation" id="toc-some-definitions-and-important-notation" class="nav-link" data-scroll-target="#some-definitions-and-important-notation"><span class="header-section-number">1.3</span> Some definitions and important notation</a></li>
+  <li><a href="#electric-forces-coulombs-law" id="toc-electric-forces-coulombs-law" class="nav-link" data-scroll-target="#electric-forces-coulombs-law"><span class="header-section-number">1.4</span> Electric Forces &amp; Coulomb’s Law</a></li>
+  <li><a href="#superposition-principle" id="toc-superposition-principle" class="nav-link" data-scroll-target="#superposition-principle"><span class="header-section-number">1.5</span> Superposition Principle</a></li>
+  <li><a href="#electric-field" id="toc-electric-field" class="nav-link" data-scroll-target="#electric-field"><span class="header-section-number">1.6</span> Electric Field</a>
+  <ul class="collapse">
+  <li><a href="#representing-the-electric-field" id="toc-representing-the-electric-field" class="nav-link" data-scroll-target="#representing-the-electric-field"><span class="header-section-number">1.6.1</span> Representing the electric field</a></li>
+  </ul></li>
+  <li><a href="#continuous-charge-distributions" id="toc-continuous-charge-distributions" class="nav-link" data-scroll-target="#continuous-charge-distributions"><span class="header-section-number">1.7</span> Continuous charge distributions</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">1.8</span> Summary</a></li>
+  <li><a href="#bonus-content-vector-fields" id="toc-bonus-content-vector-fields" class="nav-link" data-scroll-target="#bonus-content-vector-fields"><span class="header-section-number">1.9</span> Bonus content: vector fields</a>
+  <ul class="collapse">
+  <li><a href="#what-is-a-field" id="toc-what-is-a-field" class="nav-link" data-scroll-target="#what-is-a-field"><span class="header-section-number">1.9.1</span> What is a field?</a></li>
+  <li><a href="#scalar-and-vector-fields" id="toc-scalar-and-vector-fields" class="nav-link" data-scroll-target="#scalar-and-vector-fields"><span class="header-section-number">1.9.2</span> Scalar and vector fields</a></li>
+  <li><a href="#link-between-scalar-and-vector-field" id="toc-link-between-scalar-and-vector-field" class="nav-link" data-scroll-target="#link-between-scalar-and-vector-field"><span class="header-section-number">1.9.3</span> Link between scalar and vector field</a></li>
+  <li><a href="#other-operations-on-vectors" id="toc-other-operations-on-vectors" class="nav-link" data-scroll-target="#other-operations-on-vectors"><span class="header-section-number">1.9.4</span> Other operations on vectors</a></li>
+  </ul></li>
+  <li><a href="#practice-problems" id="toc-practice-problems" class="nav-link" data-scroll-target="#practice-problems"><span class="header-section-number">1.10</span> Practice problems</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Electrostatics - Charges, Forces &amp; Fields</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p><em>Recommended reading</em>: Griffiths Section 2.1 (and 2.2 if you want some bonus reading about stuff that will be important later)</p>
+<section id="pre-lecture-problem" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="pre-lecture-problem"><span class="header-section-number">1.1</span> Pre-lecture problem</h2>
+<p>Griffiths Problem 1.7</p>
+</section>
+<section id="sec-charge" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="sec-charge"><span class="header-section-number">1.2</span> Electric Charges</h2>
+<p>Electric charge is a fundamental property of matter. Many fundamental particles (such as electrons and protons) have charge. However, macroscopic objects can also be charged due to having a distribution of charged particles on them that has a small imbalance in charge - we might describe these as “charged objects”.</p>
+<p>Charge gives rise to electric fields, and hence to the electric forces experienced between charged particles or objects.</p>
+<p>Charge can be either a positive or negative quantity. “Like” charges (charges with the same sign) repel each other, and opposite charges attract.</p>
+<p>Charge is quantized and comes in integer multiples of the elementary charge <span class="math inline">\(e\)</span> which has an approximate value of <span class="math inline">\(1.602 \times 10 ^{-19}\)</span> Coulombs. Electrons carry a charge of <span class="math inline">\(-e\)</span>, and protons carry a charge of <span class="math inline">\(+e\)</span>. Charges measured in laboratories are always multiples of <span class="math inline">\(e\)</span> but the quarks inside protons and neutrons and other hadrons have charges that are fractions of this elementary charge.</p>
+<p>Charge is conserved - or more specifically, the total charge in an isolated system is conserved. (At least, this has been the case in all the particle interactions physicists have so far observed.) Hence, charge can be neither created nor destroyed, but can only be transferred from one object to another.</p>
+<p><strong>Gravitational charge:</strong> there is one type of gravitational charge, which is mass/energy. Gravitational charges attract. We don’t know about quantization of mass. (You can probably spend many hours on the internet reading different opinions on this). Mass/Energy is conserved and all everyday objects are gravitationally charged so they all attract each other, but gravity is very weak–we can easily pick up bits of paper with an electrically charged rod when rather few electrons have been moved.</p>
+<!--
+**Strong field charge:** there are three types of fundamental strong charge (red, green and blue) + three anticharges. Charges attract.
+Colour is quantised and colour is conserved in interactions. All
+everyday objects are colour neutral. Colour fields are confined within
+subatomic particles i.e. to length scales of $\sim 10^{-15}$ m.
+-->
+</section>
+<section id="some-definitions-and-important-notation" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="some-definitions-and-important-notation"><span class="header-section-number">1.3</span> Some definitions and important notation</h2>
+<p>Here I will briefly explain some notation and definitions I will use in this course for setting up and solving problems involving electric charges.</p>
+<p>Consider the following ensemble of charges:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Figures/sourcetest_definitions.png" class="img-fluid figure-img"></p>
+<figcaption>Some charges.</figcaption>
+</figure>
+</div>
+<p>We define the charges <span class="math inline">\(q_1\)</span>, <span class="math inline">\(q_2\)</span>, <span class="math inline">\(q_3\)</span>… <span class="math inline">\(q_i\)</span> as source charges, meaning that these are the charges that produce the electric field for the purpose of the problem. We define <span class="math inline">\(Q\)</span> as the test charge, which means it is the charge that is experiencing the effects of the electric field produced by the source charge(s). It is important to note that any charge can be a source or a test charge, there is no fundamental difference between them. “Source” and “test” are simply names that we give charges when setting up a problem, so that we can more easily define and solve the problem.</p>
+<p>Throughout this course you will also see the terms “source point” and “field point”. The source point is the location of the source charge(s), while the field point is essentially the location of the test charge - so when we are solving problems, this is the point at which we are measuring the field, potential, etc. The source point is given by the vector <span class="math inline">\(\mathrm{\mathbf{r}}'\)</span> and the field point is given by the vector <span class="math inline">\(\mathrm{\mathbf{r}}\)</span>, while the separation between the two point is given by the vector <span class="math inline">\(r_s\)</span>. (Please note that the Griffiths uses slightly different notation - for the separation vector it uses a curly script “r”, I did not use this as there is no way of making that symbol in Latex.) If there is no test charge in the problem (for example if we are computing the electric field of a source charge), the field point is the point at which we are measuring the field - it is the point where a test charge would be if there was one.</p>
+<div id="fig-definitions" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-definitions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="Figures/axes_r_definitions.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-definitions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.1: Some charges, overlaid with axes showing the definition of <span class="math inline">\(\mathrm{\mathbf{r}}\)</span>, the vector separation between the source and test charges.
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="electric-forces-coulombs-law" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="electric-forces-coulombs-law"><span class="header-section-number">1.4</span> Electric Forces &amp; Coulomb’s Law</h2>
+<p>All charges produce electric fields, and other charges that are in the prescence of this field experience a force as a result.</p>
+<p>The force on a test charge <span class="math inline">\(Q\)</span>, exerted by a source charge <span class="math inline">\(q\)</span>, is given by Coulomb’s Law, which is as follows: <span class="math display">\[ \mathrm{\mathbf{F}}= \frac{1}{4\pi \epsilon_0} \frac{q Q}{r_s^2} \hat{\mathrm{\mathbf{r}}_s} \]</span></p>
+<p>where:</p>
+<ul>
+<li><span class="math inline">\(\hat{\mathrm{\mathbf{r}}}\)</span> is the unit vector in the direction of the force, which points from <span class="math inline">\(q\)</span> to <span class="math inline">\(Q\)</span>.</li>
+<li><span class="math inline">\(r\)</span> is the separation between <span class="math inline">\(q\)</span> and <span class="math inline">\(Q\)</span>.</li>
+<li><span class="math inline">\(\epsilon_0\)</span> is a physical constant known as the </li>
+</ul>
+<p>If <span class="math inline">\(q\)</span> and <span class="math inline">\(Q\)</span> have the same sign (like charges) the force is repulsive (<span class="math inline">\(\mathrm{\mathbf{F}}\)</span> is a positive quantity); if <span class="math inline">\(q\)</span> and <span class="math inline">\(Q\)</span> have different signs, the force is attractive (<span class="math inline">\(\mathrm{\mathbf{F}}\)</span> is a negative quantity).</p>
+</section>
+<section id="superposition-principle" class="level2" data-number="1.5">
+<h2 data-number="1.5" class="anchored" data-anchor-id="superposition-principle"><span class="header-section-number">1.5</span> Superposition Principle</h2>
+<p>The principle of superposition states that “the interaction between any two charges is completely unaffected by the presence of others”. This means that the total force on a test charge can be computed by calculating the force on the test charge due to each source charge separately, then adding up the contributions, as follows:</p>
+<p><span class="math display">\[ \mathrm{\mathbf{F}}_{tot} = \sum_i \mathrm{\mathbf{F}}_i \]</span></p>
+</section>
+<section id="electric-field" class="level2" data-number="1.6">
+<h2 data-number="1.6" class="anchored" data-anchor-id="electric-field"><span class="header-section-number">1.6</span> Electric Field</h2>
+<p>The electric field <span class="math inline">\(\mathrm{\mathbf{E}}\)</span> produced by a charge (or a collection of charges or charge distribution) is a vector field that represents the force per unit charge experienced by a positive test charge placed at a particular point in space:</p>
+<p><span class="math display">\[ \mathrm{\mathbf{E}}= \frac{\mathrm{\mathbf{F}}}{Q} \]</span></p>
+<p>which can be rearranged to the more familiar form <span class="math inline">\(\mathrm{\mathbf{F}}= Q \mathrm{\mathbf{E}}\)</span>.</p>
+<p>Hence the electric field a distance <span class="math inline">\(r_s\)</span> from a single point charge is given by:</p>
+<p><span class="math display">\[ \mathrm{\mathbf{E}}= \frac{1}{4\pi \epsilon_0} \frac{q}{r_s^2} \hat{\mathrm{\mathbf{r}}_s} \]</span></p>
+<p><span class="math inline">\(\mathbf{E}\)</span> has units of Vm<span class="math inline">\(^{-1}\)</span> or NC<span class="math inline">\(^{-1}\)</span>.</p>
+<p>The superposition principle also applies to the electric field, which can be calculated for any given point in space as a sum of the electric field at that point from all the source charges. Consider the collection of charges in <a href="#fig-definitions" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-definitions</span></a> - the electric field due to this collection of <span class="math inline">\(i\)</span> charges can be expressed as<br>
+<span id="eq-Esum"><span class="math display">\[ \mathrm{\mathbf{E}}_{tot} = \sum_i \mathrm{\mathbf{E}}_i = \frac{1}{4\pi\epsilon_0} \sum_{i=1}^n \frac{q_i}{\mathrm{\mathbf{r}}_s_i^2} \hat{\mathrm{\mathbf{r}}_s}  \tag{1.1}\]</span></span></p>
+<p>What actually is an electric field though? As we have discussed, it is a vector field surrounding an electric charge, so it has a vector value at every point in space which represents how strong of a force another charge would experience at that point. Conceptually, this is not a trivial question - for the purposes of this course, we can simply think of electric field as a real physical entity that fills the space surrounding an electric charge, which causes other charges to “feel” the prescence of the charge and hence interact with it.</p>
+<section id="representing-the-electric-field" class="level3" data-number="1.6.1">
+<h3 data-number="1.6.1" class="anchored" data-anchor-id="representing-the-electric-field"><span class="header-section-number">1.6.1</span> Representing the electric field</h3>
+<p>The electric field is normally represented by field lines that indicate the direction of the field. The direction of the field is determined by what a positive test charge will do. That’s why field lines point towards negative charges - that’s the direction a positive charge would travel if it encountered the field of a negative charge. The density of lines/arrows indicates the strength of the field at a point. You may also see fields drawn where the size of the arrows represents the electric field strength. The diagram below shows the electric field lines for two positive point charges of the same magnitude.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Figures/Efield_like.png" class="img-fluid figure-img"></p>
+<figcaption>Representation of the electric field surrounding two positive charges.</figcaption>
+</figure>
+</div>
+<p>Most important rules for field lines:</p>
+<ul>
+<li><p>Lines begin on positive charges and end on negative charges.</p></li>
+<li><p>Lines never intersect.</p></li>
+<li><p>Lines are symmetric as they leave the charges.</p></li>
+</ul>
+</section>
+</section>
+<section id="continuous-charge-distributions" class="level2" data-number="1.7">
+<h2 data-number="1.7" class="anchored" data-anchor-id="continuous-charge-distributions"><span class="header-section-number">1.7</span> Continuous charge distributions</h2>
+<p>Many of the problems we encounter in electromagnetism are not related to small collections of individual point charges like those in <a href="#fig-definitions" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-definitions</span></a>, as this is not a very common or useful physical situation. We often have to deal instead with large collections of charges, such as a charged objects (as discussed in <a href="#sec-charge" class="quarto-xref"><span class="quarto-unresolved-ref">sec-charge</span></a>) or currents. We can think of such large collections of charges as <strong>continuous charge distributions</strong> - although they are not truly continuous, as they always consist of individual point charges, we can effectively model them as continuous when there is such a vast amount of charge.</p>
+<p>In order to find the field due to a continuous distribution, we must consider the charge divided up into infinitesimal elements <span class="math inline">\(\mathrm{d}q\)</span> which may be considered as point charges. The infinitesimal contribution to the total field produced by such an element is</p>
+<p><span class="math display">\[ \mathrm{d}\mathrm{\mathbf{E}}= \frac{\mathrm{d}q}{4\pi\epsilon_0 r_s^2} \hat{\mathrm{\mathbf{r}}_s}.\]</span> where <span class="math inline">\(\mathrm{\mathbf{r}}_s\)</span> is the separation vector from the charge element to the field point. To determine the total field due to the distributed charge, the vector sum over the whole distribution of all such contributions must be evaluated by means of an integral:</p>
+<p><span id="eq-infinitesimalE"><span class="math display">\[ E(\mathrm{\mathbf{r}}) = \frac{1}{4\pi \epsilon_0} \int \frac{1}{r_s^2} \mathrm{d}q  \tag{1.2}\]</span></span></p>
+<p>In practice, to evaluate the integral it is necessary to express <span class="math inline">\(\mathrm{d}q\)</span> in terms of $ as we will illustrate in examples. We often need to consider charge distributed along a line, over a surface or throughout a volume. This leads to the concept of a variety of charge distributions.</p>
+<ol type="1">
+<li><p>Volume charge distribution has a charge per unit volume (charge density) <span class="math inline">\(\rho\)</span>. <span class="math inline">\(\mathrm{d}q = \rho \mathrm{d}\tau'\)</span> where <span class="math inline">\(\mathrm{d}\tau'\)</span> is an element of volume. For a volume charge we can therefore reformulate <a href="#eq-infinitesimalE" class="quarto-xref">Equation&nbsp;<span class="quarto-unresolved-ref">eq-infinitesimalE</span></a> as: <span class="math display">\[ \mathrm{\mathbf{E}}{\mathrm{\mathbf{r}}} \frac{1}{4\pi\epsilon_0} \int_{\mathcal{V}} \frac{\rho (\mathrm{\mathbf{r}}')}{\mathrm{\mathbf{r}}_s^2} \hat{r_s} \mathrm{d}\tau' \]</span></p></li>
+<li><p>Surface charge distribution has a charge per unit area (surface charge density) <span class="math inline">\(\sigma\)</span>. <span class="math inline">\(\mathrm{d}q = \sigma \mathrm{d}a'\)</span> where <span class="math inline">\(\mathrm{d}a'\)</span> is an element of area. For a surface charge, the electric field is given by <span class="math display">\[ \mathrm{\mathbf{E}}{\mathrm{\mathbf{r}}} \frac{1}{4\pi\epsilon_0} \int_{\mathcal{S}} \frac{\sigma (\mathrm{\mathbf{r}}')}{\mathrm{\mathbf{r}}_s^2} \hat{r_s} \mathrm{d}a' \]</span></p></li>
+<li><p>Line charge distribution has a charge per unit length (linear charge density) <span class="math inline">\(\\lambda\)</span>. <span class="math inline">\(\mathrm{d}q = \rho \mathrm{d}l'\)</span> where <span class="math inline">\(\mathrm{d}l'\)</span> is an element of length. For a line charge. the electric field is given by <span class="math display">\[ \mathrm{\mathbf{E}}{\mathrm{\mathbf{r}}} \frac{1}{4\pi\epsilon_0} \int_{\mathcal{V}} \frac{\lambda (\mathrm{\mathbf{r}}')}{\mathrm{\mathbf{r}}_s^2} \hat{r_s} \mathrm{d}l' \]</span></p></li>
+</ol>
+<p>Note carefully the notation here - the same conventions are used as in <a href="#fig-definitions" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-definitions</span></a>, except that now the source charge is <span class="math inline">\(\mathrm{d}q\)</span>. Therefore, <span class="math inline">\(\mathrm{\mathbf{r}}_s\)</span> is the vector from <span class="math inline">\(\mathrm{d}q\)</span> (and therefore from <span class="math inline">\(\mathrm{d}\tau'\)</span>, <span class="math inline">\(\mathrm{d}a'\)</span> or <span class="math inline">\(\mathrm{d}l\)</span>) to the field point <span class="math inline">\(\mathrm{\mathbf{r}}\)</span>, while <span class="math inline">\(\mathrm{\mathbf{r}}'\)</span> is the vector from the origin to <span class="math inline">\(\mathrm{d}q\)</span>.</p>
+</section>
+<section id="summary" class="level2" data-number="1.8">
+<h2 data-number="1.8" class="anchored" data-anchor-id="summary"><span class="header-section-number">1.8</span> Summary</h2>
+<p>Electric charges create electric fields, which exert forces on other charges. Coulomb’s Law describes the force between point charges.</p>
+</section>
+<section id="bonus-content-vector-fields" class="level2" data-number="1.9">
+<h2 data-number="1.9" class="anchored" data-anchor-id="bonus-content-vector-fields"><span class="header-section-number">1.9</span> Bonus content: vector fields</h2>
+<section id="what-is-a-field" class="level3" data-number="1.9.1">
+<h3 data-number="1.9.1" class="anchored" data-anchor-id="what-is-a-field"><span class="header-section-number">1.9.1</span> What is a field?</h3>
+<p><em>Recommended reading:</em></p>
+<p>A field is a region of space, where property of that space is characterized by either a number (a scalar field) or by three numbers (a vector field).</p>
+<p>The concept of a field circumvents the problem of action at a distance, where one inanimate object is “aware” that another has arrived. We understand that the first body sets up a field and the second body interacts with the first via this field.</p>
+</section>
+<section id="scalar-and-vector-fields" class="level3" data-number="1.9.2">
+<h3 data-number="1.9.2" class="anchored" data-anchor-id="scalar-and-vector-fields"><span class="header-section-number">1.9.2</span> Scalar and vector fields</h3>
+<p>A scalar field is characterized at each point by a single number. e.g.&nbsp;the temperature, <span class="math inline">\(T\)</span>, at each position in a block of metal heated at some places and cooled at others.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Figures/isotherms.png" class="img-fluid figure-img" style="width:80mm"></p>
+<figcaption>A representation of a temperature field. Isotherms at different temperatures are black lines; blue arrows show the direction of heat flow, which is always perpendicular to the isotherms.</figcaption>
+</figure>
+</div>
+<p><span class="math inline">\(T\)</span> is a function of position i.e.&nbsp;<span class="math inline">\(T = T(x,y,z)\)</span>. At every point we can measure the scalar value of the temperature <span class="math inline">\(T\)</span>. The black lines represent isotherms i.e.&nbsp;lines where the temperature is constant (<span class="math inline">\(T_1 &lt; T_2 &lt; T_3 &lt; T_4 &lt; T_5\)</span>). Heat flow (blue arrows) is perpendicular to the contours of constant temperature - the isotherms (<span class="math inline">\(T_1\)</span>, <span class="math inline">\(T_2\)</span> etc). The magnitude of the heat flow is proportional to the temperature gradient, so that the heat flow is larger when isotherms are closer together.</p>
+<p>The scalar temperature field has an associated vector field, because at any point, the heat flow is a vector, the <strong>magnitude</strong> and <strong>direction</strong> of which depend on position. Heat flow is therefore a vector field which is related to the scalar field of temperature. The vector gradient of the field of heat flow depends on the temperature at each point.</p>
+</section>
+<section id="link-between-scalar-and-vector-field" class="level3" data-number="1.9.3">
+<h3 data-number="1.9.3" class="anchored" data-anchor-id="link-between-scalar-and-vector-field"><span class="header-section-number">1.9.3</span> Link between scalar and vector field</h3>
+<p><em>Recommended reading:</em></p>
+<p>For the scalar temperature field <span class="math inline">\(T(x,y,z)\)</span> the vector describing the direction and the magnitude of the maximum temperature gradient is:</p>
+<p><span class="math display">\[\begin{equation}
+\text{Grad} \; T = \nabla T = \frac{\partial T} {\partial x} \hat{\mathbf{i}} + \frac{\partial T}{\partial y} \hat{\mathbf{j}} + \frac{\partial T}{\partial y} \hat{\mathbf{k}}
+\end{equation}\]</span></p>
+<p>The heat flow is a vector given by <span class="math inline">\(\mathbf{Q} = -k \nabla T\)</span>; the minus sign is because heat flows from high temperature to low temperature.</p>
+<p>In general, for a scalar potential <span class="math inline">\(-\nabla \phi = \frac{\partial \phi} {\partial x} \hat{\mathbf{i}} + \frac{\partial \phi}{\partial y} \hat{\mathbf{j}} + \frac{\partial \phi}{\partial y} \hat{\mathbf{k}}\)</span> describes the magnitude and direction of the physical effects of the potential, with an appropriate constant if needed. In the case of the electric field if the electric potential is <span class="math inline">\(V\)</span> then the vector field <span class="math inline">\(\mathbf{E} = -\nabla V\)</span>.</p>
+<p>As an example, the gravitational field can be obtained from the gravitational potential. The scalar gravitational potential energy is given by <span class="math inline">\(U = mgz\)</span> near the Earth’s surface, where <span class="math inline">\(z\)</span> is the height. The gravitational potential is <span class="math inline">\(U/m = gz\)</span>. The gravitational field is <span class="math inline">\(-\nabla(gz)=-g \hat{\mathbf{k}}\)</span>.</p>
+</section>
+<section id="other-operations-on-vectors" class="level3" data-number="1.9.4">
+<h3 data-number="1.9.4" class="anchored" data-anchor-id="other-operations-on-vectors"><span class="header-section-number">1.9.4</span> Other operations on vectors</h3>
+<p>The vector operator <span class="math inline">\(\nabla\)</span> behaves as a vector. We have looked at grad <span class="math inline">\(\nabla\phi\)</span> where <span class="math inline">\(\phi\)</span> is a scalar field. In Maxwell’s equations, which you cover next year, you will also meet <span class="math inline">\(\nabla\)</span> operating on the electric field <span class="math inline">\(\mathbf{E}\)</span>:</p>
+<p><span class="math inline">\(\nabla \cdot \mathbf{E}\)</span> (div or divergence)</p>
+<p><span class="math inline">\(\nabla \times \mathbf{E}\)</span> (curl or rotation)</p>
+<p>Maxwell’s equations are one of the great achievements of 19th century Physics. They link the phenomena of electricity and magnetism and can be used to derive an expression for the speed of light. Einstein said that the theory of Relativity was rooted in Maxwell’s equations. The equations in their differential form are shown below and we will meet these in more detail later in the course, along with the integral versions of these laws.</p>
+<p><span class="math display">\[\begin{equation}
+
+\nabla \cdot \mathbf{E} = \frac{\rho}{\epsilon_0}
+\end{equation}\]</span></p>
+<p><span class="math display">\[\begin{equation}
+\nabla \times \mathbf{E} = - \frac{\partial \mathbf{B}}{\partial t}
+\end{equation}\]</span></p>
+<p><span class="math display">\[\begin{equation}
+\nabla \cdot \mathbf{B} = 0
+\end{equation}\]</span></p>
+<p><span class="math display">\[\begin{equation}
+\nabla \times \mathbf{B} = \frac{\mathbf{j}}{c^2 \epsilon_0} + \frac{1}{c^2} \frac{\partial \mathbf{E}}{\partial t}
+\end{equation}\]</span></p>
+<p>Source: <a href="http://www.clerkmaxwellfoundation.org/html/about_maxwell.html" class="uri">http://www.clerkmaxwellfoundation.org/html/about_maxwell.html</a>;<a href="https://maxwells-equations.com/" class="uri">https://maxwells-equations.com/</a></p>
+</section>
+</section>
+<section id="practice-problems" class="level2" data-number="1.10">
+<h2 data-number="1.10" class="anchored" data-anchor-id="practice-problems"><span class="header-section-number">1.10</span> Practice problems</h2>
+<ol type="1">
+<li>(<em>Griffiths Problem 2.2</em>)</li>
+</ol>
+<p>In the lecture, we found the electric field (magnitude and direction) a distance <span class="math inline">\(z\)</span> above the midpoint between two equal charges, <span class="math inline">\(q\)</span>, a distance <span class="math inline">\(d\)</span> apart. We found that for distances <span class="math inline">\(z &gt;&gt; a\)</span>, as we might expect the field appears like that of a single charge <span class="math inline">\(2q\)</span>.</p>
+<p>Repeat the calculation of the electric field, but replace the charge on the right with a negative charge (so we now have a dipole). Is there anything interesting about this result? [Hint: try computing the field for different ranges of <span class="math inline">\(z\)</span>-values.]</p>
+<ol start="2" type="1">
+<li><p>Charges <span class="math inline">\(+Q\)</span>, <span class="math inline">\(+Q\)</span> and <span class="math inline">\(-Q\)</span> are arranged at the vertices of an equilateral triangle. What is the electric field at the centre of the triangle?</p></li>
+<li><p>A charge <span class="math inline">\(Q\)</span> is uniformly distributed along the circumference of a thin ring of radius <span class="math inline">\(R\)</span>. Find the electric field a distance <span class="math inline">\(z\)</span> above the centre of the ring.</p></li>
+</ol>
+<p><img src="Figures/L1_prob3.png" class="img-fluid" width="100"></p>
+<p>:bulb: <strong>Hint:</strong> Have a look at Example 2.2 in the Griffiths.</p>
+<ol start="4" type="1">
+<li>(<em>Griffiths Problem 2.6</em>) Find the electric field a distance <span class="math inline">\(z\)</span> above the center of a flat circular disk of radius <span class="math inline">\(R\)</span> (see figure below) that carries a uniform surface charge <span class="math inline">\(\sigma\)</span>. What does your formula give in the limit <span class="math inline">\(R \rightarrow \infty\)</span>? Also check the case <span class="math inline">\(z &gt;&gt; R\)</span>.</li>
+</ol>
+<p><img src="Figures/L1_prob4.png" class="img-fluid" width="100"></p>
+<ol start="5" type="1">
+<li>Find the electric field at a distance <span class="math inline">\(z\)</span> above the midpoint of a uniform line charge, of length <span class="math inline">\(2L\)</span> and charge density <span class="math inline">\(\lambda\)</span> (see figure below).</li>
+</ol>
+<p><img src="Figures/L2_prob3.png" class="img-fluid" width="200"></p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./index.html" class="pagination-link" aria-label="Preface">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Preface</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./L2_workenergy.html" class="pagination-link" aria-label="Work and Energy in Electrostatics">
+        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Work and Energy in Electrostatics</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

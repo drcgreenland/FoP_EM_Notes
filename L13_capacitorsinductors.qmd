@@ -1,0 +1,18 @@
+\newcommand{\l}{\mathrm{\mathbf{l}}}
+\newcommand{\E}{\mathrm{\mathbf{E}}}
+\newcommand{\F}{\mathrm{\mathbf{F}}}
+\newcommand{\r}{\mathrm{\mathbf{r}}}
+
+\newcommand{\x}{\mathrm{\mathbf{x}}}
+\newcommand{\y}{\mathrm{\mathbf{y}}}
+\newcommand{\z}{\mathrm{\mathbf{z}}}
+
+# Capacitors and Inductors
+## Capacitors
+
+*Recommended reading*: Griffiths Section 4.4; Tipler & Mosca...
+
+## Inductors
+
+
+*Recommended reading*: Griffiths Section 7.2.3 & 7.2.4; Tipler & Mosca...

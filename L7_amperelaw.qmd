@@ -1,0 +1,14 @@
+\newcommand{\l}{\mathrm{\mathbf{l}}}
+\newcommand{\E}{\mathrm{\mathbf{E}}}
+\newcommand{\F}{\mathrm{\mathbf{F}}}
+\newcommand{\r}{\mathrm{\mathbf{r}}}
+
+\newcommand{\x}{\mathrm{\mathbf{x}}}
+\newcommand{\y}{\mathrm{\mathbf{y}}}
+\newcommand{\z}{\mathrm{\mathbf{z}}}
+
+# Ampere's Law and Solenoids
+
+*Recommended reading*: Griffiths Section 5.3
+
+*A problem to try before attending the lecture*: Griffiths [insert problem no.]

@@ -12,7 +12,7 @@ Griffiths [insert problem no.] -- Find a problem which is very tricky without Ga
 
 ## Introduction
 
-Gauss's Law is the first of Maxwell's equations and forms part of the basis of classical electromagnetism. It concerns the relationship between electric flux through a closed surface and the electric charge enclosed within that surface. Crucially, it allows us a much simpler method by which to calculate the electric field compared to 
+Gauss's Law is the first of Maxwell's equations and forms part of the basis of classical electromagnetism. It concerns the relationship between electric flux through a closed surface and the electric charge enclosed within that surface. Crucially, it allows us a much simpler method by which to calculate the electric field compared to ... ??
 
 ## Electric flux 
 

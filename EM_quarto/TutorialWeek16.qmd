@@ -1,0 +1,82 @@
+---
+title: "Electricity & Magnetism Tutorial Questions, Week 16"
+author: "Richard J. Stancliffe"
+format:
+  html:
+    embed-resources: true
+---
+
+## Question 1
+
+A charge of +36μC is at a point A. At a point B located 8.0 m away, there is a second charge of −16μC. Calculate the electric field at each of the following points:
+
+a.) a point located 6m away from A and 2m away from B,
+
+b.) a point located 10m away from A and 2m away from B,
+
+Remember that the electric field is a *vector* quantity -- it must have both magnitude and direction.
+
+## Question 2
+
+Three charges are arranged in a line as shown in the figure below.
+
+![](ChargeDistribution_Week16.png){fig-alt="A diagram showing three charges in a line" fig-align="center"}
+
+Calculate:
+
+i. The total force acting on the charge in the middle (-2nC).
+
+ii. The electric potential energy U of the three charges
+
+iii. The electric potential at point X
+
+iv. The electric field at point X
+
+v. The force that a charge of -2nC would experience if it was placed at point X.
+
+
+## Question 3
+
+On the surface of a sphere with a radius of 10 cm 10000 electrons are evenly spread out.
+
+a.)	Calculate the electric field at a point 50 cm away from the center of the sphere.
+
+
+b.)	Calculate the electric field at a point 5 cm away from the center of the sphere.
+
+
+c.)  This sphere is placed inside a hollow sphere with a radius of 20 cm. Uniformly spread out over the surface of this sphere are 20000 protons. Calculate the electric field at a point 50 cm away from the center of the sphere. 
+
+
+## Question 4
+
+In a vacuum, a proton ($m_p = 1.673 \times 10^{−27}\,$kg) is travelling at $1 \times 10^6\,$m/s from very, very far away towards another proton that is fixed at its position. The electrostatic potential energy U between two point charges is given by:
+$$
+U = \frac{1}{4\pi\epsilon_0}\frac{q_1q_2}{r}
+$$
+ 
+Calculate how close the protons approach each other. 
+
+Hint: The question might look very difficult at first, but it is very similar to throwing a ball up in the air. You convert kinetic energy into potential energy. At the moment where the distance is the closest, all kinetic energy is converted into potential energy.
+
+## Question 5
+
+Two parallel plates are placed 5mm apart from one another to form a capacitor. A voltage of 20 V is applied across the plates creating an electric field as shown in the diagram below.
+
+![](CapacitorField_Week16.png){fig-align="center" fig-alt="Two plates forming a capacitor with an electric field between them"}
+
+a.) Calculate the strength of the electric field inside the capacitor.
+
+
+b.) What is the electric field *outside* the capacitor? You do not need to calculate this -- just explain it!
+
+
+c.) A proton is place in the centre of the two plates. It is then moved from left to right by 2cm. What is the difference in potential energy?
+
+
+d.) The proton is now moved upward by 0.1 mm. Calculate the change in potential energy.
+
+
+e.) The proton is now moved downward by 0.1 mm. What is the change in potential energy?
+
+

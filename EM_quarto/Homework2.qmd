@@ -1,0 +1,29 @@
+---
+title: "Electricity & Magnetism Homework 2"
+author: "Richard J. Stancliffe"
+format:
+  html:
+    embed-resources: true
+---
+
+# Question 1
+
+a) What is the source of the magnetic field?
+b) Why do magnetic field lines only form closed loops?
+c) Draw the magnetic field of a bar magnet. Where is the field strongest? Where is the field weakest?
+
+
+# Question 2
+
+ A wire is fixed horizontally and has a current of 100 A running through from left to right. A second wire is placed parallel to it and 10 cm lower. The second wire weighs 100$\,\text{g/m}$. How much current needs to be flowing through the 
+second wire and in which direction in order to keep it afloat?\
+
+# Question 3
+
+A proton, emitted from the sun, is approaching Earth at 1$\times10^{6}\,\text{m/s}$ perpendicular to the Earth's magnetic field ($0.05\,$mT). The sun is to the left of the Earth as shown in the figure below.
+
+![](HW2_earth.pdf){width=7cm fig-align=center}
+
+a) Describe the orbit of the proton. In which direction does it perform circular movement?
+b) Calculate the radius of the proton's orbit.
+
